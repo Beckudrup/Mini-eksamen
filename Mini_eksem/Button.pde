@@ -15,10 +15,10 @@ Button(float x, float y, float b, float h, String t){
         this.text = t;
     }
   public void tegnKnap() {
-        p.fill(0);
-        p.rect(this.xPos, this.yPos, this.w, this.h);
-        p.fill(255);
-        p.text(this.text, xPos + 40, yPos + 40);
+        fill(0);
+        rect(this.xPos, this.yPos, this.w, this.h);
+        fill(255);
+        text(this.text, xPos + 40, yPos + 40);
     }
     boolean erKnapTrykket() {
         return Tryk;
