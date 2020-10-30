@@ -1,6 +1,11 @@
 JSONObject json;
 Button teacher = new Button(200, 200, 200, 50, "Teachers login");
+DisplayAndInput displayAndInput = new DisplayAndInput(); 
+Button teacher = new Button(350,200,200,50,"Teachers login");
 
+
+void setup(){
+size(600,600);
 
 void setup() {
   size(600, 600);
@@ -11,6 +16,24 @@ void setup() {
     println(deities);
   }
 }
-void draw() {
-  teacher.drawButton();
+
+void draw(){
+  displayAndInput.display(teacher);
+
+
+student.drawButton();
+if(teacher.isButtonPressed()){
+screenChange = 1;  
+println(screenChange);
+}
+}
+void mousePressed(){
+ teacher.registerClick(mouseX,mouseY);
+ student.registerClick(mouseX,mouseY);
+}
+void mouseReleased(){
+  teacher.release();
+  student.release();
+  
+
 }

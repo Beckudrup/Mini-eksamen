@@ -1,9 +1,9 @@
-class NewQuestion{
+class TextField{
   boolean isInside;
   String inPut = "";
   int x,y,w,h;
   
-  NewQuestion(int x, int y, int w, int h){
+  TextField(int x, int y, int w, int h){
     this.x=x;
     this.y=y;
     this.w=w;

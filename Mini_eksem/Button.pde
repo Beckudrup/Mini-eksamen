@@ -19,7 +19,7 @@ Button(float x, float y, float b, float h, String t){
         fill(0);
         rect(this.xPos, this.yPos, this.w, this.h);
         fill(255);
-        text(this.text, xPos + 40, yPos + 40);
+        text(this.text, xPos +10, yPos + 35);
     }
     boolean isButtonPressed() {
         return Tryk;
@@ -31,6 +31,9 @@ Button(float x, float y, float b, float h, String t){
                 Tryk = true;
 
             }
+}
+void release(){
+            Tryk=false;
 }
 
   
