@@ -25,7 +25,6 @@ Button(float x, float y, float b, float h, String t){
 
     }
     void registrerKlik(float xin, float yin) {
-            //If statement der checker om man klikker på en af knapperne
 
             if (xin > xPos && xin < xPos + w && yin < yPos + h && yin > yPos) {
                 Tryk = true;
