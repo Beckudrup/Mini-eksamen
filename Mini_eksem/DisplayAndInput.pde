@@ -1,6 +1,5 @@
 
 
- 
 class DisplayAndInput {
   
 int screenChange;
