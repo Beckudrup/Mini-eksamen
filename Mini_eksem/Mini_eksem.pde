@@ -14,7 +14,5 @@ void draw(){
 
 
 student.drawButton();
-if(teacher.isButtonPressed()){
-screenChange = 1;  
-}
+
 }
