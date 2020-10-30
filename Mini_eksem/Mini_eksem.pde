@@ -1,18 +1,20 @@
-Button student = new Button(50,200,200,50,"Students login");
 
 
-DisplayAndInput displayAndInput = new DisplayAndInput(); 
-Button teacher = new Button(350,200,200,50,"Teachers login");
-
+ArrayList<Button> buttonList = new ArrayList();
+DisplayAndInput displayAndInput = new DisplayAndInput();
+int screenChange=0;
 
 void setup(){
 size(600,600);
 
 }
 void draw(){
-  displayAndInput.display(teacher);
+  displayAndInput.display(buttonList,screenChange);
+}
 
-
-student.drawButton();
-
+void buttonfixer(){
+if (screenChange==0){
+buttonList.add(new Button(350,200,200,50,"Teachers login"));
+buttonList.add(new Button(50,200,200,50,"Student login"));
+}
 }

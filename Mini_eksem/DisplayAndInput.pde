@@ -2,22 +2,29 @@
 
  
 class DisplayAndInput {
-  Button emne1 = new Button(50,200,200,50,"Fractions");
-Button emne2 = new Button(50,200,200,50,"Trigonometry");
-Button emne3 = new Button(50,200,200,50,"Vectors");
-int screenChange = 0;
+  
+int screenChange;
   DisplayAndInput() {
   }
-  void display(Button teacher) {
-    loginscreen();
-    teacher.drawButton();
+  void display(ArrayList<Button> buttonList,int screenChange) {
+   // loginscreen();
+    this.screenChange=screenChange;
+    for(int i = 0;i<buttonList.size();i++){
+    buttonList.get(i).drawButton();
+    }
+   
+    
   }
 
   void loginscreen() {
     background(3, 140, 213);
     text("Welcome to OSU", 200, 100);
   }
+  int screenchanger(){
+  int screenchange=0;
   
+  return screenchange;
+  }
 void teacherScreen1(){
 if(screenChange == 1){
   
