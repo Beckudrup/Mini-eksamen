@@ -8,7 +8,7 @@ int screenChange;
   void display(ArrayList<Button> buttonList,int screenChange) {
     loginscreen();
     this.screenChange=screenChange;
-    for(int i = 0;i<buttonList.size();i++){
+    for(int i = 0; i < buttonList.size(); i++){
     buttonList.get(i).drawButton();
     }
    

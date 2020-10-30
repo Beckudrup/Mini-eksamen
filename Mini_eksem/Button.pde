@@ -31,6 +31,6 @@ class Button {
     }
   }
   void release() {
-    Tryk=false;
+    Tryk = false;
   }
 }

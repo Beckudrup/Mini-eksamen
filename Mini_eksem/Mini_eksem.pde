@@ -1,13 +1,8 @@
-
-
 ArrayList<Button> buttonList = new ArrayList();
 DisplayAndInput displayAndInput = new DisplayAndInput();
-int screenChange=0;
+int screenChange = 0;
 JSONObject json;
-boolean notdoneyet=true;
-
-
-
+boolean notdoneyet = true;
 
 void setup() {
   size(600, 600);
@@ -18,15 +13,15 @@ void setup() {
     println(deities);
   }
 }
-void draw(){
+void draw() {
   buttonfixer();
-  displayAndInput.display(buttonList,screenChange);
+  displayAndInput.display(buttonList, screenChange);
 }
 
-void buttonfixer(){
-if (screenChange==0&&notdoneyet==true){
-buttonList.add(new Button(350,200,200,50,"Teachers login"));
-buttonList.add(new Button(50,200,200,50,"Student login"));
-notdoneyet=false;
-}
+void buttonfixer() {
+  if (screenChange == 0 && notdoneyet == true) {
+    buttonList.add(new Button(350, 200, 200, 50, "Teachers login"));
+    buttonList.add(new Button(50, 200, 200, 50, "Student login"));
+    notdoneyet = false;
+  }
 }
