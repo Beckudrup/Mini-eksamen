@@ -6,7 +6,7 @@ int screenChange;
   DisplayAndInput() {
   }
   void display(ArrayList<Button> buttonList,int screenChange) {
-   // loginscreen();
+    loginscreen();
     this.screenChange=screenChange;
     for(int i = 0;i<buttonList.size();i++){
     buttonList.get(i).drawButton();
@@ -25,8 +25,8 @@ int screenChange;
   return screenchange;
   }
 void teacherScreen1(){
-if(screenChange == 1){
+//if(screenChange == 1){
   
-}
+//}
 }
 }
