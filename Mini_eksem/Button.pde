@@ -32,6 +32,9 @@ Button(float x, float y, float b, float h, String t){
 
             }
 }
+void release(){
+            Tryk=false;
+}
 
   
 }
