@@ -14,17 +14,18 @@ Button(float x, float y, float b, float h, String t){
         this.yPos = y;
         this.text = t;
     }
-  public void tegnKnap() {
+  public void drawButton() {
+        textSize(24);
         fill(0);
         rect(this.xPos, this.yPos, this.w, this.h);
         fill(255);
         text(this.text, xPos + 40, yPos + 40);
     }
-    boolean erKnapTrykket() {
+    boolean isButtonPressed() {
         return Tryk;
 
     }
-    void registrerKlik(float xin, float yin) {
+    void registerClick(float xin, float yin) {
 
             if (xin > xPos && xin < xPos + w && yin < yPos + h && yin > yPos) {
                 Tryk = true;

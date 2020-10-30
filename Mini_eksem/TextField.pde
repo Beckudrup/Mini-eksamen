@@ -11,7 +11,7 @@ class NewQuestion{
    
   }
   
-      void click(float xin, float yin) {
+      void registerClick(float xin, float yin) {
 
         if (xin > x && xin < x + w && yin < y + h && yin > y) {
             isInside= true;
