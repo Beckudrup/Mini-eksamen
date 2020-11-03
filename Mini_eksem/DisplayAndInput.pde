@@ -26,7 +26,7 @@ int screenChange;
   
 void teacherScreen1(){
 if(screenChange == 1){
-  
+  text("Teacher",200,200);
 }
 }
 }

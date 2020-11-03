@@ -35,6 +35,16 @@ void screenChanger() {
     if(screenChange==0){
     screenChange=1;
     buttonList.clear();
+    notdoneyet=true;
+    }
+  }
+  }
+  if(buttonList.size()>1){
+  if(buttonList.get(1).isButtonPressed()){
+    if(screenChange==0){
+    screenChange=2;
+    buttonList.clear();
+    notdoneyet=true;
     }
   }
   }
