@@ -8,8 +8,9 @@ int screenChange;
   void display(ArrayList<Button> buttonList,int screenChange) {
    
     this.screenChange=screenChange;
+    background(3, 140, 213);
     loginscreen();
-    
+    teacherScreen1();
     for(int i = 0; i < buttonList.size(); i++){
     buttonList.get(i).drawButton();
     }
@@ -26,6 +27,7 @@ int screenChange;
   
 void teacherScreen1(){
 if(screenChange == 1){
+  
   text("Teacher",200,200);
 }
 }
