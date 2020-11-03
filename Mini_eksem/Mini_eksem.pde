@@ -14,8 +14,10 @@ void setup() {
   }
 }
 void draw() {
+  clear();
   buttonfixer();
   displayAndInput.display(buttonList, screenChange);
+  screenChanger();
 }
 
 void buttonfixer() {
@@ -24,4 +26,24 @@ void buttonfixer() {
     buttonList.add(new Button(50, 200, 200, 50, "Student login"));
     notdoneyet = false;
   }
+  
+}
+
+void screenChanger() {
+  if(buttonList.size()>0){
+  if(buttonList.get(0).isButtonPressed()){
+    if(screenChange==0){
+    screenChange=1;
+    buttonList.clear();
+    }
+  }
+  }
+}
+  
+void mouseClicked(){
+  for(int i = 0;i<buttonList.size();i++){
+buttonList.get(i).registerClick(mouseX,mouseY);
+  }
+
+
 }
