@@ -1,27 +1,32 @@
 import de.bezier.data.sql.*;
 
-class Database{
+class Database {
 
-SQLite db;
+  SQLite db;
 
-void setup()
-{
-  size( 100, 100 );
+  PApplet p;
 
-  db = new SQLite(this, "test.db" );  // open database file
+  Database(PApplet p) {
+    this.p = p;
+  }
 
-  if ( db.connect() )
+  void setups()
   {
+    size(100, 100 );
 
-    db.query( "SELECT * FROM table_one");
 
-    while (db.next())
+    db = new SQLite(p, "test.db" );  // open database file
+
+    if ( db.connect() )
     {
-      print(db.getString("field_one"));
-      println(" ",db.getInt("field_two"));
+
+      db.query( "SELECT * FROM table_one");
+
+      while (db.next())
+      {
+        print(db.getString("field_one"));
+        println(" ", db.getInt("field_two"));
+      }
     }
   }
-}
-
-  
 }

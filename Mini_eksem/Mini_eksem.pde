@@ -1,5 +1,7 @@
 ArrayList<Button> buttonList = new ArrayList();
 DisplayAndInput displayAndInput = new DisplayAndInput();
+Database database = new Database(this);
+
 int screenChange = 0;
 boolean notdoneyet = true;
 
@@ -18,6 +20,7 @@ void buttonfixer() {
   if (screenChange == 0 && notdoneyet == true) {
     buttonList.add(new Button(350, 200, 200, 50, "Teachers login"));
     buttonList.add(new Button(50, 200, 200, 50, "Student login"));
+
     notdoneyet = false;
   }
 }
