@@ -25,8 +25,14 @@ int screenChange;
   
 void teacherScreen1(){
 if(screenChange == 1){
+  buttonList.add(new Button(20, 20, 75, 50, "Back"));
+  buttonList.add(new Button(400, 200, 125, 90, "List of \nstudents"));
+  buttonList.add(new Button(10, 200, 125, 50, "Fractions"));
+  buttonList.add(new Button(10, 400, 120, 50, "Vectors"));
+  buttonList.add(new Button(10, 300, 200, 50, "Trigonometry"));
   
-  text("Teacher",200,200);
+    
+  text("Teacher",250,100);
 }
 }
 }
