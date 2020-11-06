@@ -4,10 +4,8 @@ Database database = new Database(this);
 int screenChange = 0;
 boolean notdoneyet = true;
 TextField TFractions = new TextField (100,100,100,100);
-TextField TFractions1 = new TextField (50,300,100,100);
-TextField TFractions2 = new TextField (50,300,100,100);
-TextField TFractions3 = new TextField (50,300,100,100);
-TextField TFractions4 = new TextField (50,300,100,100);
+ArrayList<TextField> textFieldList = new ArrayList();
+
 
 void setup() {
   size(600, 600);
