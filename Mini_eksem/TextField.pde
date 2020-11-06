@@ -24,7 +24,7 @@ class TextField {
   }
   void textInsideField(char key) {
     if (isInside) {
-      if (key == BACKSPACE && inPut.length() > 0){
+      if (key == BACKSPACE && inPut.length() > 0) {
         inPut = inPut.substring(0, inPut.length() -1);
       } else if (key!=BACKSPACE) {
         inPut = inPut + key;
