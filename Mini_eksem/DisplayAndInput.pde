@@ -1,3 +1,4 @@
+
 class DisplayAndInput {
   
 int screenChange;
@@ -30,9 +31,17 @@ if(screenChange == 1){
   buttonList.add(new Button(10, 200, 125, 50, "Fractions"));
   buttonList.add(new Button(10, 400, 120, 50, "Vectors"));
   buttonList.add(new Button(10, 300, 200, 50, "Trigonometry"));
-  
+
     
   text("Teacher",250,100);
 }
+}
+void teacherFractions(){
+ if (screenChange == 3){
+text("Fraction",50,50);   
+ }
+ 
+ 
+  
 }
 }

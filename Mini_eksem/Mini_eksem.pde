@@ -1,12 +1,20 @@
 ArrayList<Button> buttonList = new ArrayList();
+
 DisplayAndInput displayAndInput = new DisplayAndInput();
 Database database = new Database(this);
 
 int screenChange = 0;
 boolean notdoneyet = true;
-
 void setup() {
   size(600, 600);
+
+  json = loadJSONObject("LoveCraft.JSON");
+
+  for (int i = 0; i < json.size(); i++) {
+    JSONArray deities = json.getJSONArray("deities"); 
+    println(deities);
+  }
+  
 }
 
 void draw() {
