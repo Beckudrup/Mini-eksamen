@@ -3,6 +3,11 @@ DisplayAndInput displayAndInput = new DisplayAndInput();
 Database database = new Database(this);
 int screenChange = 0;
 boolean notdoneyet = true;
+TextField TFractions = new TextField (100,100,100,100);
+TextField TFractions1 = new TextField (50,300,100,100);
+TextField TFractions2 = new TextField (50,300,100,100);
+TextField TFractions3 = new TextField (50,300,100,100);
+TextField TFractions4 = new TextField (50,300,100,100);
 
 void setup() {
   size(600, 600);
@@ -11,7 +16,7 @@ void setup() {
 void draw() {
   clear();
   buttonfixer();
-  displayAndInput.display(buttonList, screenChange);
+  displayAndInput.display(buttonList, screenChange, TFractions);
   screenChanger();
 }
 
@@ -27,7 +32,7 @@ void screenChanger() {
   if (buttonList.size() > 0) {
     if (buttonList.get(0).isButtonPressed()) {
       if (screenChange == 0) {
-        screenChange = 1;
+        screenChange = 1; // Lærer screen
         buttonList.clear();
         notdoneyet = true;
       }
@@ -36,7 +41,16 @@ void screenChanger() {
   if (buttonList.size() > 1) {
     if (buttonList.get(1).isButtonPressed()) {
       if (screenChange == 0) {
-        screenChange = 2;
+        screenChange = 2;//Elev screen
+        buttonList.clear();
+        notdoneyet = true;
+      }
+    }
+  }
+  if (buttonList.size() == 5) {
+    if (buttonList.get(0).isButtonPressed()) {
+      if (screenChange == 0) {
+        screenChange = 0;//Main screen 
         buttonList.clear();
         notdoneyet = true;
       }
@@ -48,4 +62,10 @@ void mouseClicked() {
   for (int i = 0; i < buttonList.size(); i++) {
     buttonList.get(i).registerClick(mouseX, mouseY);
   }
+  TFractions.registerClick(mouseX,mouseY);
+}
+
+void keyTyped(){
+ TFractions.textInsideField(key);
+  
 }

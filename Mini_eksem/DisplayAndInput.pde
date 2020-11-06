@@ -1,15 +1,15 @@
-
 class DisplayAndInput {
 
   int screenChange;
   DisplayAndInput() {
   }
-  void display(ArrayList<Button> buttonList, int screenChange) {
+  void display(ArrayList<Button> buttonList, int screenChange,TextField TFractions) {
 
     this.screenChange=screenChange;
     background(3, 140, 213);
     loginscreen();
     teacherScreen1();
+    teacherFractions();
     for (int i = 0; i < buttonList.size(); i++) {
       buttonList.get(i).drawButton();
     }
@@ -28,15 +28,23 @@ class DisplayAndInput {
       buttonList.add(new Button(400, 200, 125, 90, "List of \nstudents"));
       buttonList.add(new Button(10, 200, 125, 50, "Fractions"));
       buttonList.add(new Button(10, 400, 120, 50, "Vectors"));
-      buttonList.add(new Button(10, 300, 200, 50, "Trigonometry"));
+      buttonList.add(new Button(10, 300, 200, 50, ">"));
 
 
       text("Teacher", 250, 100);
     }
   }
   void teacherFractions() {
-    if (screenChange == 3) {
-      text("Fraction", 50, 50);
+    if (screenChange == 2) {
+      fill(0, 0, 0);
+      text("Fraction", 250, 25);
+      fill(255,255,255);
+    TFractions.display();
+    TFractions1.display();
+    TFractions2.display();
+    TFractions3.display();
+    TFractions4.display();
+    text(TFractions.inPut,200,200);
     }
-  }
+  } 
 }
