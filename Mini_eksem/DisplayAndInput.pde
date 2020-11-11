@@ -3,7 +3,7 @@ class DisplayAndInput {
   int screenChange;
   DisplayAndInput() {
   }
-  void display(ArrayList<Button> buttonList, int screenChange,ArrayList<TextField> TFList) {
+  void display(ArrayList<Button> buttonList, int screenChange, ArrayList<TextField> TFList) {
 
     this.screenChange=screenChange;
     background(3, 140, 213);
@@ -30,47 +30,40 @@ class DisplayAndInput {
       text("Teacher", 250, 100);
     }
   }
-  void studentScreen(){
-  if(screenChange==2){
-  
+  void studentScreen() {
+    if (screenChange==2) {
+    }
   }
-  }
-  void teacherListOfStudendts(){
-  if(screenChange==3){
-  
-  }
+  void teacherListOfStudendts() {
+    if (screenChange==3) {
+    }
   }
   void teacherFractions() {
     if (screenChange == 4) {
       fill(0, 0, 0);
       text("Fraction", 250, 25);
-      fill(255,255,255);
-      text(TFractions.inPut,200,200);
+      fill(255, 255, 255);
+      text(TFractions.inPut, 200, 200);
     }
   }
-  void teacherVectors(){
-  if(screenChange==5){
-  
+  void teacherVectors() {
+    if (screenChange==5) {
+    }
   }
+  void teacherTrigonometry() {
+    if (screenChange==6) {
+    }
   }
-  void teacherTrigonometry(){
-  if(screenChange==6){
-  
+  void studentVectors() {
+    if (screenChange==7) {
+    }
   }
+  void studentFractions() {
+    if (screenChange==8) {
+    }
   }
-  void studentVectors(){
-  if(screenChange==7){
-  
-  }
-  }
-   void studentFractions(){
-  if(screenChange==8){
-  
-  }
-  }
-   void studentTrigonometry(){
-  if(screenChange==9){
-  
-  }
+  void studentTrigonometry() {
+    if (screenChange==9) {
+    }
   }
 }

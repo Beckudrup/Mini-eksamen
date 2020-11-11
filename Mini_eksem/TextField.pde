@@ -23,7 +23,7 @@ class TextField {
     fill(255);
     rect(x, y, w, h);
     fill(0);
-    text(inPut,x+10,y+40);
+    text(inPut, x+10, y+40);
   }
   void textInsideField(char key) {
     if (isInside) {
