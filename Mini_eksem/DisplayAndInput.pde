@@ -28,14 +28,12 @@ class DisplayAndInput {
       buttonList.add(new Button(400, 200, 125, 90, "List of \nstudents"));
       buttonList.add(new Button(10, 200, 125, 50, "Fractions"));
       buttonList.add(new Button(10, 400, 120, 50, "Vectors"));
-      buttonList.add(new Button(10, 300, 200, 50, ">"));
-
-
+      buttonList.add(new Button(10, 300, 200, 50, "Trigonemetry"));
       text("Teacher", 250, 100);
     }
   }
   void teacherFractions() {
-    if (screenChange == 3) {
+    if (screenChange == 4) {
       fill(0, 0, 0);
       text("Fraction", 250, 25);
       fill(255,255,255);

@@ -27,17 +27,21 @@ void buttonfixer() {
 }
 
 void screenChanger() {
-  buttonEffects(0,0,1);
-   buttonEffects(0,1,0);
-   buttonEffects(0,2,0);
-   buttonEffects(1,0,2);
+   buttonEffects(0,0,1);//fra main til teacher
+   buttonEffects(0,1,0);//fra teacher til main
+   buttonEffects(0,2,0);//fra elev til main
+   buttonEffects(1,0,2);//fra main til elev
+   buttonEffects(1,1,3);//fra teacher til teahcer list of studens
+   buttonEffects(2,1,4);//fra teacher til teacher fractions
+   buttonEffects(3,1,5);//fra teacher til vectors
+   buttonEffects(4,1,6);//fra teacher til trigonometry
 }
 
 void buttonEffects(int nrknap,int onScreen,int toScreen){
 if (buttonList.size() > nrknap) {
     if (buttonList.get(nrknap).isButtonPressed()) {
       if (screenChange == onScreen) {
-        screenChange = toScreen;//Elev screen
+        screenChange = toScreen;
         buttonList.clear();
         notdoneyet = true;
       }
