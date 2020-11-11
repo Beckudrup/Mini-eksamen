@@ -38,6 +38,8 @@ void buttonAndTextFieldfixer() {
   textFieldList.add(new TextField( 200,  300,  80,  50));
   textFieldList.add(new TextField( 350,  300,  80,  50));
   textFieldList.add(new TextField( 500,  300,  80,  50));
+  buttonList.add(new Button(500, 530, 80, 50, "Next"));
+  buttonList.add(new Button(500, 200, 80, 50, "Save"));
   notdoneyet = false;
   }
    if (screenChange==5&&notdoneyet == true){
@@ -46,6 +48,8 @@ void buttonAndTextFieldfixer() {
   textFieldList.add(new TextField( 200,  300,  80,  50));
   textFieldList.add(new TextField( 350,  300,  80,  50));
   textFieldList.add(new TextField( 500,  300,  80,  50));
+  buttonList.add(new Button(500, 530, 80, 50, "Next"));
+  buttonList.add(new Button(500, 200, 80, 50, "Save"));
   notdoneyet = false;
   }
    if (screenChange==6&&notdoneyet == true){
@@ -54,6 +58,8 @@ void buttonAndTextFieldfixer() {
   textFieldList.add(new TextField( 200,  300,  80,  50));
   textFieldList.add(new TextField( 350,  300,  80,  50));
   textFieldList.add(new TextField( 500,  300,  80,  50));
+  buttonList.add(new Button(500, 530, 80, 50, "Next"));
+  buttonList.add(new Button(500, 200, 80, 50, "Save"));
   notdoneyet = false;
   }
 }
@@ -75,7 +81,7 @@ if (buttonList.size() > nrknap) {
       if (screenChange == onScreen) {
         screenChange = toScreen;
         buttonList.clear();
-        
+        textFieldList.clear();
         notdoneyet = true;
       }
     }
