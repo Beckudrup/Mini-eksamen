@@ -3,15 +3,18 @@ class DisplayAndInput {
   int screenChange;
   DisplayAndInput() {
   }
-  void display(ArrayList<Button> buttonList, int screenChange,TextField TFractions) {
+  void display(ArrayList<Button> buttonList, int screenChange,ArrayList<TextField> TFList) {
 
     this.screenChange=screenChange;
     background(3, 140, 213);
     loginscreen();
-    teacherScreen1();
+    teacherScreen();
     teacherFractions();
     for (int i = 0; i < buttonList.size(); i++) {
       buttonList.get(i).drawButton();
+    }
+    for (int i = 0; i < TFList.size(); i++) {
+      TFList.get(i).display();
     }
   }
 
@@ -22,27 +25,52 @@ class DisplayAndInput {
     }
   }
 
-  void teacherScreen1() {
+  void teacherScreen() {
     if (screenChange == 1) {
-      buttonList.add(new Button(20, 20, 75, 50, "Back"));
-      buttonList.add(new Button(400, 200, 125, 90, "List of \nstudents"));
-      buttonList.add(new Button(10, 200, 125, 50, "Fractions"));
-      buttonList.add(new Button(10, 400, 120, 50, "Vectors"));
-      buttonList.add(new Button(10, 300, 200, 50, "Trigonemetry"));
       text("Teacher", 250, 100);
     }
+  }
+  void studentScreen(){
+  if(screenChange==2){
+  
+  }
+  }
+  void teacherListOfStudendts(){
+  if(screenChange==3){
+  
+  }
   }
   void teacherFractions() {
     if (screenChange == 4) {
       fill(0, 0, 0);
       text("Fraction", 250, 25);
       fill(255,255,255);
-    TFractions.display();
-  // TFractions1.display();
-  // TFractions2.display();
-  // TFractions3.display();
-  // TFractions4.display();
-    text(TFractions.inPut,200,200);
+      text(TFractions.inPut,200,200);
     }
-  } 
+  }
+  void teacherVectors(){
+  if(screenChange==5){
+  
+  }
+  }
+  void teacherTrigonometry(){
+  if(screenChange==6){
+  
+  }
+  }
+  void studentVectors(){
+  if(screenChange==7){
+  
+  }
+  }
+   void studentFractions(){
+  if(screenChange==8){
+  
+  }
+  }
+   void studentTrigonometry(){
+  if(screenChange==9){
+  
+  }
+  }
 }

@@ -13,16 +13,48 @@ void setup() {
 
 void draw() {
   clear();
-  buttonfixer();
-  displayAndInput.display(buttonList, screenChange, TFractions);
+  buttonAndTextFieldfixer();
+  displayAndInput.display(buttonList, screenChange, textFieldList);
   screenChanger();
 }
 
-void buttonfixer() {
+void buttonAndTextFieldfixer() {
   if (screenChange == 0 && notdoneyet == true) {
     buttonList.add(new Button(350, 200, 200, 50, "Teachers login"));
     buttonList.add(new Button(50, 200, 200, 50, "Student login"));
     notdoneyet = false;
+  }
+  if (screenChange==1&&notdoneyet == true){
+      buttonList.add(new Button(20, 20, 75, 50, "Back"));
+      buttonList.add(new Button(400, 200, 125, 90, "List of \nstudents"));
+      buttonList.add(new Button(10, 200, 125, 50, "Fractions"));
+      buttonList.add(new Button(10, 400, 120, 50, "Vectors"));
+      buttonList.add(new Button(10, 300, 200, 50, "Trigonemetry"));
+      notdoneyet = false;
+  }
+  if (screenChange==4&&notdoneyet == true){
+  textFieldList.add(new TextField( 200,  200,  200,  50));
+  textFieldList.add(new TextField( 50,  300,  80,  50));
+  textFieldList.add(new TextField( 200,  300,  80,  50));
+  textFieldList.add(new TextField( 350,  300,  80,  50));
+  textFieldList.add(new TextField( 500,  300,  80,  50));
+  notdoneyet = false;
+  }
+   if (screenChange==5&&notdoneyet == true){
+  textFieldList.add(new TextField( 200,  200,  200,  50));
+  textFieldList.add(new TextField( 50,  300,  80,  50));
+  textFieldList.add(new TextField( 200,  300,  80,  50));
+  textFieldList.add(new TextField( 350,  300,  80,  50));
+  textFieldList.add(new TextField( 500,  300,  80,  50));
+  notdoneyet = false;
+  }
+   if (screenChange==6&&notdoneyet == true){
+  textFieldList.add(new TextField( 200,  200,  200,  50));
+  textFieldList.add(new TextField( 50,  300,  80,  50));
+  textFieldList.add(new TextField( 200,  300,  80,  50));
+  textFieldList.add(new TextField( 350,  300,  80,  50));
+  textFieldList.add(new TextField( 500,  300,  80,  50));
+  notdoneyet = false;
   }
 }
 
@@ -43,6 +75,7 @@ if (buttonList.size() > nrknap) {
       if (screenChange == onScreen) {
         screenChange = toScreen;
         buttonList.clear();
+        
         notdoneyet = true;
       }
     }
@@ -51,13 +84,21 @@ if (buttonList.size() > nrknap) {
 }
 
 void mouseClicked() {
+  if(buttonList.size()>0){
   for (int i = 0; i < buttonList.size(); i++) {
     buttonList.get(i).registerClick(mouseX, mouseY);
-  }
-  TFractions.registerClick(mouseX,mouseY);
+  }}
+  if(textFieldList.size()>0){
+  for (int i = 0; i < textFieldList.size(); i++) {
+    textFieldList.get(i).registerClick(mouseX, mouseY);
+  }}
+  
 }
 
 void keyTyped(){
- TFractions.textInsideField(key);
+  for (int i = 0; i < textFieldList.size(); i++) {
+    textFieldList.get(i).textInsideField(key);
+  }
+ 
   
 }
