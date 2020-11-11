@@ -6,21 +6,19 @@ class Database {
 
   PApplet p;
 
+//Giver en golbal this
   Database(PApplet p) {
     this.p = p;
   }
 
   void setups()
   {
-    size(100, 100 );
-
-
     db = new SQLite(p, "test.db" );  // open database file
 
     if ( db.connect() )
     {
 
-      db.query( "SELECT * FROM table_one");
+      db.query( "SELECT * FROM table_one"); // choice of data
 
       while (db.next())
       {

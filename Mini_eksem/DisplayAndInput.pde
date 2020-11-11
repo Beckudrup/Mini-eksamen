@@ -39,11 +39,6 @@ class DisplayAndInput {
       fill(0, 0, 0);
       text("Fraction", 250, 25);
       fill(255,255,255);
-    TFractions.display();
-    TFractions1.display();
-    TFractions2.display();
-    TFractions3.display();
-    TFractions4.display();
     text(TFractions.inPut,200,200);
     }
   } 
