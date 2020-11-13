@@ -17,9 +17,9 @@ class Button {
   public void drawButton() {
     textSize(24);
     fill(0);
-    rect(this.xPos, this.yPos, this.w, this.h);
+    rect(xPos, yPos, w, h);
     fill(255);
-    text(this.text, xPos +10, yPos + 35);
+    text(text, xPos +10, yPos + 35);
   }
   boolean isButtonPressed() {
     return Tryk;
