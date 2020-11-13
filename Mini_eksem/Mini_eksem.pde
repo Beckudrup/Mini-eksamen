@@ -19,6 +19,7 @@ void draw() {
 
 void buttonAndTextFieldfixer() {
   if (screenChange == 0 && notdoneyet == true) {
+    database.setups();
     buttonList.add(new Button(350, 200, 200, 50, "Teachers login"));
     buttonList.add(new Button(50, 200, 200, 50, "Student login"));
     notdoneyet = false;
