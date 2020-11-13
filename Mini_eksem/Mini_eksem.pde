@@ -1,10 +1,10 @@
 ArrayList<Button> buttonList = new ArrayList();
 DisplayAndInput displayAndInput = new DisplayAndInput();
-//Database database = new Database(this);
+Database database = new Database(this);
 int screenChange = 0;
 boolean notdoneyet = true;
 ArrayList<TextField> textFieldList = new ArrayList();
-
+int i;
 
 void setup() {
   size(600, 600);
@@ -65,6 +65,11 @@ void screenChanger() {
   buttonEffects(0, i, 1);//fra teacher Student List til teacher
   for(int i = 1;i<4;i++)
   buttonEffects(i, 2, i+6);//fra Student til Student fractions
+  
+  
+  
+  buttonEffectsNoVariables();
+
 }
 
 void buttonEffects(int nrknap, int onScreen, int toScreen) {
@@ -78,6 +83,20 @@ void buttonEffects(int nrknap, int onScreen, int toScreen) {
       }
     }
   }
+}
+void buttonEffectsNoVariables(){
+  if (buttonList.size() > 2) {
+    if (buttonList.get(2).isButtonPressed()) {
+      if (screenChange == 4||screenChange ==5||screenChange ==6) {
+        database.saveExercise(textFieldList.get(0).inPut, textFieldList.get(1).inPut, textFieldList.get(2).inPut, textFieldList.get(3).inPut, textFieldList.get(4).inPut, i);
+        buttonList.clear();
+        textFieldList.clear();
+        notdoneyet = true;
+        i++;
+      }
+    }
+  }
+
 }
 
 void mouseClicked() {
