@@ -32,9 +32,9 @@ void buttonAndTextFieldfixer() {
     buttonList.add(new Button(10, 300, 200, 50, "Trigonemetry"));
     notdoneyet = false;
   }
-   if (screenChange == 2 && notdoneyet == true) {
+  if (screenChange == 2 && notdoneyet == true) {
     buttonList.add(new Button(20, 530, 80, 50, "Back"));
-     buttonList.add(new Button(10, 200, 125, 50, "Fractions"));
+    buttonList.add(new Button(10, 200, 125, 50, "Fractions"));
     buttonList.add(new Button(10, 400, 120, 50, "Vectors"));
     buttonList.add(new Button(10, 300, 200, 50, "Trigonemetry"));
     notdoneyet = false;
@@ -45,8 +45,8 @@ void buttonAndTextFieldfixer() {
 
   if ((screenChange==4||screenChange==5||screenChange==6)&&notdoneyet == true) {
     textFieldList.add(new TextField( 200, 100, 200, 50));
-    for(int i = 0;i<4;i++)
-    textFieldList.add(new TextField( 50+i*150, 200, 80, 50));
+    for (int i = 0; i<4; i++)
+      textFieldList.add(new TextField( 50+i*150, 200, 80, 50));
     buttonList.add(new Button(20, 530, 80, 50, "Back"));
     buttonList.add(new Button(500, 530, 80, 50, "Next"));
     buttonList.add(new Button(500, 100, 80, 50, "Save"));
@@ -59,17 +59,16 @@ void screenChanger() {
   buttonEffects(0, 1, 0);//fra teacher til main
   buttonEffects(0, 2, 0);//fra elev til main
   buttonEffects(1, 0, 2);//fra main til elev
-  for(int i = 1;i<5;i++)
-  buttonEffects(i, 1,i+2);//fra teacher til teahcer list of studens
-  for(int i = 3;i<7;i++)
-  buttonEffects(0, i, 1);//fra teacher Student List til teacher
-  for(int i = 1;i<4;i++)
-  buttonEffects(i, 2, i+6);//fra Student til Student fractions
-  
-  
-  
-  buttonEffectsNoVariables();
+  for (int i = 1; i<5; i++)
+    buttonEffects(i, 1, i+2);//fra teacher til teahcer list of studens
+  for (int i = 3; i<7; i++)
+    buttonEffects(0, i, 1);//fra teacher Student List til teacher
+  for (int i = 1; i<4; i++)
+    buttonEffects(i, 2, i+6);//fra Student til Student fractions
 
+
+
+  buttonEffectsNoVariables();
 }
 
 void buttonEffects(int nrknap, int onScreen, int toScreen) {
@@ -84,7 +83,7 @@ void buttonEffects(int nrknap, int onScreen, int toScreen) {
     }
   }
 }
-void buttonEffectsNoVariables(){
+void buttonEffectsNoVariables() {
   if (buttonList.size() > 2) {
     if (buttonList.get(2).isButtonPressed()) {
       if (screenChange == 4||screenChange ==5||screenChange ==6) {
@@ -96,7 +95,6 @@ void buttonEffectsNoVariables(){
       }
     }
   }
-
 }
 
 void mouseClicked() {

@@ -17,8 +17,8 @@ class DisplayAndInput {
     studentVectors();
     studentFractions();
     studentTrigonometry();
-    
-    
+
+
     for (int i = 0; i < buttonList.size(); i++) {
       buttonList.get(i).drawButton();
     }
@@ -55,7 +55,6 @@ class DisplayAndInput {
     if (screenChange == 4) {
       fill(0, 0, 0);
       text("Fraction", 250, 25);
-    
     }
   }
   void teacherVectors() {

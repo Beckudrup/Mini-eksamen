@@ -20,7 +20,7 @@ class Database {
       String test = "you";
       String test1 = "me";
       db.query("INSERT INTO Exercises (question, answer1) VALUES ('"+ test + "', '"+ test1 +"');");
-      
+
       db.query( "SELECT * FROM Exercises"); // choice of data
       print(db.getString("question"));
       println(" ", db.getString("answer1"));
