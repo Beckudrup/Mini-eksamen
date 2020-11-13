@@ -3,7 +3,6 @@ DisplayAndInput displayAndInput = new DisplayAndInput();
 //Database database = new Database(this);
 int screenChange = 0;
 boolean notdoneyet = true;
-TextField TFractions = new TextField (100, 100, 100, 100);
 ArrayList<TextField> textFieldList = new ArrayList();
 
 
