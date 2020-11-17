@@ -45,8 +45,10 @@ void buttonAndTextFieldfixer() {
 
   if ((screenChange==4||screenChange==5||screenChange==6)&&notdoneyet == true) {
     textFieldList.add(new TextField( 200, 100, 200, 50));
-    for (int i = 0; i<4; i++)
+    for (int i = 0; i<4; i++){
       textFieldList.add(new TextField( 50+i*150, 200, 80, 50));
+       buttonList.add(new Button(70+i*150, 270, 40, 50, ""));  
+  }
     buttonList.add(new Button(20, 530, 80, 50, "Back"));
     buttonList.add(new Button(500, 530, 80, 50, "Next"));
     buttonList.add(new Button(500, 100, 80, 50, "Save"));
@@ -85,7 +87,7 @@ void buttonEffects(int nrknap, int onScreen, int toScreen) {
 }
 void buttonEffectsNoVariables() {
   if (buttonList.size() > 2) {
-    if (buttonList.get(2).isButtonPressed()) {
+    if (buttonList.get(6).isButtonPressed()) {
       if (screenChange == 4||screenChange ==5||screenChange ==6) {
         database.saveExercise(textFieldList.get(0).inPut, textFieldList.get(1).inPut, textFieldList.get(2).inPut, textFieldList.get(3).inPut, textFieldList.get(4).inPut, i);
         buttonList.clear();
