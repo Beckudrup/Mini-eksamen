@@ -4,7 +4,8 @@ Database database = new Database(this);
 int screenChange = 0;
 boolean notdoneyet = true;
 ArrayList<TextField> textFieldList = new ArrayList();
-int i;
+int k;
+int rightanswer;
 
 void setup() {
   size(600, 600);
@@ -13,7 +14,7 @@ void setup() {
 void draw() {
   clear();
   buttonAndTextFieldfixer();
-  displayAndInput.display(buttonList, screenChange, textFieldList);
+  displayAndInput.display(buttonList, screenChange, textFieldList,rightanswer);
   screenChanger();
 }
 
@@ -61,10 +62,11 @@ void screenChanger() {
   buttonEffects(0, 1, 0);//fra teacher til main
   buttonEffects(0, 2, 0);//fra elev til main
   buttonEffects(1, 0, 2);//fra main til elev
+  buttonEffects(0, 3, 1);//fra teacher Student List til teacher
   for (int i = 1; i<5; i++)
     buttonEffects(i, 1, i+2);//fra teacher til teahcer list of studens
-  for (int i = 3; i<7; i++)
-    buttonEffects(0, i, 1);//fra teacher Student List til teacher
+  for (int i = 4; i<7; i++)
+    buttonEffects(4, i, 1);//fra teacher Student List til teacher
   for (int i = 1; i<4; i++)
     buttonEffects(i, 2, i+6);//fra Student til Student fractions
 
@@ -86,19 +88,27 @@ void buttonEffects(int nrknap, int onScreen, int toScreen) {
   }
 }
 void buttonEffectsNoVariables() {
-  if (buttonList.size() > 2) {
+  if (buttonList.size() > 6) {
     if (buttonList.get(6).isButtonPressed()) {
       if (screenChange == 4||screenChange ==5||screenChange ==6) {
-        database.saveExercise(textFieldList.get(0).inPut, textFieldList.get(1).inPut, textFieldList.get(2).inPut, textFieldList.get(3).inPut, textFieldList.get(4).inPut, i);
+        database.saveExercise(textFieldList.get(0).inPut, textFieldList.get(1).inPut, textFieldList.get(2).inPut, textFieldList.get(3).inPut, textFieldList.get(4).inPut, k);
         buttonList.clear();
         textFieldList.clear();
         notdoneyet = true;
-        i++;
+        rightanswer = 0;
+        k++;
       }
     }
   }
+  for(int i = 0;i<4;i++)
+  if (buttonList.size() > i) {
+    if (buttonList.get(i).isButtonPressed()) {
+   if (screenChange == 4||screenChange ==5||screenChange ==6) {
+    rightanswer = i;
+      }
+   }
 }
-
+}
 void mouseClicked() {
 
   for (int i = 0; i < buttonList.size(); i++) {
@@ -106,6 +116,12 @@ void mouseClicked() {
   }
   for (int i = 0; i < textFieldList.size(); i++) {
     textFieldList.get(i).registerClick(mouseX, mouseY);
+  }
+}
+
+void keyReleased(){
+ for (int i = 0; i < buttonList.size(); i++) {
+    buttonList.get(i).release();
   }
 }
 

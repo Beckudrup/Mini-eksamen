@@ -3,7 +3,7 @@ class DisplayAndInput {
   int screenChange;
   DisplayAndInput() {
   }
-  void display(ArrayList<Button> buttonList, int screenChange, ArrayList<TextField> TFList) {
+  void display(ArrayList<Button> buttonList, int screenChange, ArrayList<TextField> TFList,int r) {
 
     this.screenChange=screenChange;
     background(3, 140, 213);
@@ -11,7 +11,7 @@ class DisplayAndInput {
     teacherScreen();
     studentScreen();
     teacherListOfStudendts();
-    teacherFractions();
+    teacherFractions(r);
     teacherVectors();
     teacherTrigonometry();
     studentVectors();
@@ -51,10 +51,11 @@ class DisplayAndInput {
     if (screenChange==3) {
     }
   }
-  void teacherFractions() {
+  void teacherFractions(int r) {
     if (screenChange == 4) {
       fill(0, 0, 0);
       text("Fraction", 250, 25);
+      println(r);
     }
   }
   void teacherVectors() {
