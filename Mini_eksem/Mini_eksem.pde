@@ -90,7 +90,7 @@ void buttonEffects(int nrknap, int onScreen, int toScreen) {
   }
 }
 void buttonEffectsNoVariables() {
-  if (screenChange == 4||screenChange ==5||screenChange ==6) {
+  /*if (screenChange == 4||screenChange ==5||screenChange ==6) {
     if (buttonList.get(6).isButtonPressed()) {
       
      //   database.saveExercise(textFieldList.get(0).inPut, textFieldList.get(1).inPut, textFieldList.get(2).inPut, textFieldList.get(3).inPut, textFieldList.get(4).inPut, k);
@@ -100,37 +100,26 @@ void buttonEffectsNoVariables() {
         rightanswer = 0;
         k++;
       }
-    }
+    }*/
  
   
   if (screenChange == 4||screenChange ==5||screenChange ==6) {
  
     if (buttonList.get(0).isButtonPressed()) {
-   
     rightanswer = 0;
      }
-   
-  
     if (buttonList.get(1).isButtonPressed()) {
-   
     rightanswer = 1;
      }
-   
-
-
     if (buttonList.get(2).isButtonPressed()) {
-   
     rightanswer = 2;
+   //   println(buttonList.get(2) + " buttonEffectsNoVariables:"+ rightanswer + " ");
      }
-   
-
-
     if (buttonList.get(3).isButtonPressed()) {
-   
     rightanswer = 3;
      }
+     
    
-
 }
 }
 
@@ -158,7 +147,7 @@ void mouseClicked() {
   }
 }
 
-void keyReleased(){
+void mouseReleased(){
  for (int i = 0; i < buttonList.size(); i++) {
     buttonList.get(i).release();
   }

@@ -27,10 +27,12 @@ class Button {
   void registerClick(float xin, float yin) {
 
     if (xin > xPos && xin < xPos + w && yin < yPos + h && yin > yPos) {
+   //   println(this+ " registerClick");
       Tryk = true;
     }
   }
   void release() {
     Tryk = false;
+   // println(this+ " release");
   }
 }
