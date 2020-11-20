@@ -6,6 +6,7 @@ boolean notdoneyet = true;
 ArrayList<TextField> textFieldList = new ArrayList();
 int k;
 int rightanswer;
+boolean changedScreen;
 
 void setup() {
   size(600, 600);
@@ -47,7 +48,7 @@ void buttonAndTextFieldfixer() {
 
   if ((screenChange == 4 || screenChange == 5 || screenChange == 6) && notdoneyet == true) {
     textFieldList.add(new TextField( 200, 100, 200, 50));
-    for (int i = 0; i < 4; i++)
+    for (int i = 0; i < 4; i++){
       textFieldList.add(new TextField( 50+i*150, 200, 80, 50));
        buttonList.add(new Button(70+i*150, 270, 40, 50, ""));  
   }
@@ -59,37 +60,40 @@ void buttonAndTextFieldfixer() {
 }
 
 void screenChanger() {
+  buttonEffectsNoVariables();
   buttonEffects(0, 0, 1);//fra main til teacher
   buttonEffects(0, 1, 0);//fra teacher til main
   buttonEffects(0, 2, 0);//fra elev til main
   buttonEffects(1, 0, 2);//fra main til elev
   for (int i = 1; i < 5; i++)
     buttonEffects(i, 1, i + 2);//fra teacher til teahcer list of studens
-  for (int i = 3; i < 7; i++)
-    buttonEffects(0, i, 1);//fra teacher Student List til teacher
+  buttonEffects(0, 3, 1);//fra teacher Student List til teacher
+  for (int i = 4; i < 7; i++)
+    buttonEffects(4, i, 1);//fra teacher Student List til teacher
   for (int i = 1; i < 4; i++)
     buttonEffects(i, 2, i + 6);//fra Student til Student fractions
-  buttonEffectsGetData();
-  buttonEffectsNoVariables();
+//  buttonEffectsGetData();
+  changedScreen=false;
 }
 
 void buttonEffects(int nrknap, int onScreen, int toScreen) {
-  if (buttonList.size() > nrknap) {
+ 
+    if (screenChange == onScreen&&changedScreen==false) {
     if (buttonList.get(nrknap).isButtonPressed()) {
-      if (screenChange == onScreen) {
+      
         screenChange = toScreen;
         buttonList.clear();
         textFieldList.clear();
         notdoneyet = true;
-      }
+        changedScreen=true;
     }
   }
 }
 void buttonEffectsNoVariables() {
-  if (buttonList.size() > 6) {
+  if (screenChange == 4||screenChange ==5||screenChange ==6) {
     if (buttonList.get(6).isButtonPressed()) {
-      if (screenChange == 4||screenChange ==5||screenChange ==6) {
-        database.saveExercise(textFieldList.get(0).inPut, textFieldList.get(1).inPut, textFieldList.get(2).inPut, textFieldList.get(3).inPut, textFieldList.get(4).inPut, k);
+      
+     //   database.saveExercise(textFieldList.get(0).inPut, textFieldList.get(1).inPut, textFieldList.get(2).inPut, textFieldList.get(3).inPut, textFieldList.get(4).inPut, k);
         buttonList.clear();
         textFieldList.clear();
         notdoneyet = true;
@@ -97,18 +101,40 @@ void buttonEffectsNoVariables() {
         k++;
       }
     }
-  }
-  for(int i = 0; i < 4; i++)
-  if (buttonList.size() > i) {
-    if (buttonList.get(i).isButtonPressed()) {
-   if (screenChange == 4||screenChange ==5||screenChange ==6) {
-    rightanswer = i;
-      }
-   }
+ 
+  
+  if (screenChange == 4||screenChange ==5||screenChange ==6) {
+ 
+    if (buttonList.get(0).isButtonPressed()) {
+   
+    rightanswer = 0;
+     }
+   
+  
+    if (buttonList.get(1).isButtonPressed()) {
+   
+    rightanswer = 1;
+     }
+   
+
+
+    if (buttonList.get(2).isButtonPressed()) {
+   
+    rightanswer = 2;
+     }
+   
+
+
+    if (buttonList.get(3).isButtonPressed()) {
+   
+    rightanswer = 3;
+     }
+   
+
 }
 }
 
-void buttonEffectsGetData() {
+/*void buttonEffectsGetData() {
   if (buttonList.size() > 2) {
     if (buttonList.get(2).isButtonPressed()) {
       if (screenChange == 4 ||screenChange == 5 ||screenChange == 6) {
@@ -121,7 +147,7 @@ void buttonEffectsGetData() {
       }
     }
   }
-}
+}*/
 void mouseClicked() {
 
   for (int i = 0; i < buttonList.size(); i++) {
