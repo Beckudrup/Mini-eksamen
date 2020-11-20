@@ -28,7 +28,7 @@ class DisplayAndInput {
   }
 
   void loginscreen() {
-    if (screenChange==0) {
+    if (screenChange == 0) {
       background(3, 140, 213);
       fill(0, 0, 0);
       text("Welcome to OSU", 200, 100);
@@ -42,13 +42,13 @@ class DisplayAndInput {
     }
   }
   void studentScreen() {
-    if (screenChange==2) {
+    if (screenChange == 2) {
       fill(0, 0, 0);
       text("Student", 250, 100);
     }
   }
   void teacherListOfStudendts() {
-    if (screenChange==3) {
+    if (screenChange == 3) {
     }
   }
   void teacherFractions() {
@@ -58,31 +58,31 @@ class DisplayAndInput {
     }
   }
   void teacherVectors() {
-    if (screenChange==5) {
+    if (screenChange == 5) {
       fill(0, 0, 0);
       text("Vectors", 250, 25);
     }
   }
   void teacherTrigonometry() {
-    if (screenChange==6) {
+    if (screenChange == 6) {
       fill(0, 0, 0);
       text("Trigonometry", 250, 25);
     }
   }
   void studentVectors() {
-    if (screenChange==7) {
+    if (screenChange == 7) {
       fill(0, 0, 0);
       text("Vectors", 250, 25);
     }
   }
   void studentFractions() {
-    if (screenChange==8) {
+    if (screenChange == 8) {
       fill(0, 0, 0);
       text("Fraction", 250, 25);
     }
   }
   void studentTrigonometry() {
-    if (screenChange==9) {
+    if (screenChange == 9) {
       fill(0, 0, 0);
       text("Trigonometry", 250, 25);
     }
