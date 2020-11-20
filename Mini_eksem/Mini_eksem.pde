@@ -57,6 +57,24 @@ void buttonAndTextFieldfixer() {
     buttonList.add(new Button(500, 100, 80, 50, "Save"));
     notdoneyet = false;
   }
+  if (screenChange==7){
+    buttonList.add(new Button(40,270,40,50,""));
+    buttonList.add(new Button(190,270,40,50,""));
+    buttonList.add(new Button(340,270,40,50,""));
+    buttonList.add(new Button(490,270,40,50,""));
+  }
+  if (screenChange==8){
+    buttonList.add(new Button(70,270,40,50,""));
+    buttonList.add(new Button(70,420,40,50,""));
+    buttonList.add(new Button(70,570,40,50,""));
+    buttonList.add(new Button(70,720,40,50,""));
+  }
+  if (screenChange==9){
+    buttonList.add(new Button(70,270,40,50,""));
+    buttonList.add(new Button(70,420,40,50,""));
+    buttonList.add(new Button(70,570,40,50,""));
+    buttonList.add(new Button(70,720,40,50,""));
+  }
 }
 
 void screenChanger() {
@@ -104,19 +122,9 @@ void buttonEffectsNoVariables() {
  
   
   if (screenChange == 4||screenChange ==5||screenChange ==6) {
- 
-    if (buttonList.get(0).isButtonPressed()) {
-    rightanswer = 0;
-     }
-    if (buttonList.get(1).isButtonPressed()) {
-    rightanswer = 1;
-     }
-    if (buttonList.get(2).isButtonPressed()) {
-    rightanswer = 2;
-   //   println(buttonList.get(2) + " buttonEffectsNoVariables:"+ rightanswer + " ");
-     }
-    if (buttonList.get(3).isButtonPressed()) {
-    rightanswer = 3;
+ for(int i =0;i<4;i++)
+    if (buttonList.get(i).isButtonPressed()) {
+    rightanswer = i;
      }
      
    
