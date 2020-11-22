@@ -31,20 +31,23 @@ class DisplayAndInput {
     if (screenChange == 0) {
       background(3, 140, 213);
       fill(0, 0, 0);
-      text("Welcome to OSU", 200, 100);
+      textSize(40);
+      text("Welcome to OSU", 150, 100);
     }
   }
 
   void teacherScreen() {
     if (screenChange == 1) {
       fill(0, 0, 0);
-      text("Teacher", 250, 100);
+      textSize(40);
+      text("Teacher", 200, 100);
     }
   }
   void studentScreen() {
     if (screenChange == 2) {
       fill(0, 0, 0);
-      text("Student", 250, 100);
+      textSize(40);
+      text("Student", 200, 100);
     }
   }
   void teacherListOfStudendts() {
@@ -54,38 +57,44 @@ class DisplayAndInput {
   void teacherFractions(int r) {
     if (screenChange == 4) {
       fill(0, 0, 0);
-      text("Fraction", 250, 25);
+      textSize(40);
+      text("Fraction", 200, 50);
       println(r);
     }
   }
   void teacherVectors() {
     if (screenChange == 5) {
       fill(0, 0, 0);
-      text("Vectors", 250, 25);
+      textSize(40);
+      text("Vectors", 200, 50);
     }
   }
   void teacherTrigonometry() {
     if (screenChange == 6) {
       fill(0, 0, 0);
-      text("Trigonometry", 250, 25);
+      textSize(40);
+      text("Trigonometry", 200, 50);
     }
   }
   void studentVectors() {
     if (screenChange == 7) {
       fill(0, 0, 0);
-      text("Vectors", 250, 25);
+      textSize(40);
+      text("Vectors", 200, 50);
     }
   }
   void studentFractions() {
     if (screenChange == 8) {
       fill(0, 0, 0);
-      text("Fraction", 250, 25);
+      textSize(40);
+      text("Fraction", 200, 50);
     }
   }
   void studentTrigonometry() {
     if (screenChange == 9) {
       fill(0, 0, 0);
-      text("Trigonometry", 250, 25);
+      textSize(40);
+      text("Trigonometry", 200, 50);
     }
   }
 }

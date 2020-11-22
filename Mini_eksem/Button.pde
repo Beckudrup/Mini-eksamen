@@ -31,6 +31,9 @@ class Button {
       Tryk = true;
     }
   }
+  void valgt(){
+  
+  }
   void release() {
     Tryk = false;
    // println(this+ " release");
