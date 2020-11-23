@@ -1,17 +1,19 @@
 class DisplayAndInput {
-
+  int rightAnswer;
   int screenChange;
+  ArrayList<Button> buttList;
   DisplayAndInput() {
   }
   void display(ArrayList<Button> buttonList, int screenChange, ArrayList<TextField> TFList,int r) {
-
+    this.buttList=buttonList;
     this.screenChange=screenChange;
+    this.rightAnswer=r;
     background(3, 140, 213);
     loginscreen();
     teacherScreen();
     studentScreen();
     teacherListOfStudendts();
-    teacherFractions(r);
+    teacherFractions();
     teacherVectors();
     teacherTrigonometry();
     studentVectors();
@@ -54,12 +56,13 @@ class DisplayAndInput {
     if (screenChange == 3) {
     }
   }
-  void teacherFractions(int r) {
+  void teacherFractions() {
     if (screenChange == 4) {
       fill(0, 0, 0);
       textSize(40);
       text("Fraction", 200, 50);
-      println(r);
+      buttList.get(rightAnswer).valgt();
+      
     }
   }
   void teacherVectors() {
@@ -67,6 +70,7 @@ class DisplayAndInput {
       fill(0, 0, 0);
       textSize(40);
       text("Vectors", 200, 50);
+      buttList.get(rightAnswer).valgt();
     }
   }
   void teacherTrigonometry() {
@@ -74,6 +78,7 @@ class DisplayAndInput {
       fill(0, 0, 0);
       textSize(40);
       text("Trigonometry", 200, 50);
+      buttList.get(rightAnswer).valgt();
     }
   }
   void studentVectors() {
@@ -81,6 +86,7 @@ class DisplayAndInput {
       fill(0, 0, 0);
       textSize(40);
       text("Vectors", 200, 50);
+      buttList.get(rightAnswer).valgt();
     }
   }
   void studentFractions() {
@@ -88,6 +94,7 @@ class DisplayAndInput {
       fill(0, 0, 0);
       textSize(40);
       text("Fraction", 200, 50);
+      buttList.get(rightAnswer).valgt();
     }
   }
   void studentTrigonometry() {
@@ -95,6 +102,7 @@ class DisplayAndInput {
       fill(0, 0, 0);
       textSize(40);
       text("Trigonometry", 200, 50);
+      buttList.get(rightAnswer).valgt();
     }
   }
 }

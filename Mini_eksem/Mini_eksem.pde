@@ -121,7 +121,7 @@ void buttonEffectsNoVariables() {
     }*/
  
   
-  if (screenChange == 4||screenChange ==5||screenChange ==6) {
+  if (screenChange == 4||screenChange ==5||screenChange ==6||screenChange ==7||screenChange ==8||screenChange ==9) {
  for(int i =0;i<4;i++)
     if (buttonList.get(i).isButtonPressed()) {
     rightanswer = i;

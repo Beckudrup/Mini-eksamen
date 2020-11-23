@@ -32,7 +32,7 @@ class Button {
     }
   }
   void valgt(){
-  
+  triangle(xPos+w/2,yPos+h+10,xPos+w/2-w/4,yPos+h+30,xPos+w/2+w/4,yPos+h+30);
   }
   void release() {
     Tryk = false;
