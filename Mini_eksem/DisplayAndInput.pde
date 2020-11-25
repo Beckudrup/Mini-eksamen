@@ -34,7 +34,7 @@ class DisplayAndInput {
       background(3, 140, 213);
       fill(0, 0, 0);
       textSize(40);
-      text("Welcome to OSU", 150, 100);
+      text("Welcome", 150, 100);
     }
   }
 
