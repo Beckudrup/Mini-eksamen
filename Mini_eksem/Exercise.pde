@@ -5,5 +5,4 @@ class Exercise {
   String a2;
   String a3;
   String a4;
-  
 }

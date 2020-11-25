@@ -29,7 +29,7 @@ class TextField {
     if (isInside) {
       if (key == BACKSPACE && inPut.length() > 0) {
         inPut = inPut.substring(0, inPut.length() -1);
-      } else if (key!=BACKSPACE) {
+      } else if (key != BACKSPACE) {
         inPut = inPut + key;
       }
     }

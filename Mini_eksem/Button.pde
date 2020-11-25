@@ -19,7 +19,7 @@ class Button {
     fill(0);
     rect(xPos, yPos, w, h);
     fill(255);
-    text(text, xPos +10, yPos + 35);
+    text(text, xPos + 10, yPos + 35);
   }
   boolean isButtonPressed() {
     return Tryk;
@@ -27,15 +27,15 @@ class Button {
   void registerClick(float xin, float yin) {
 
     if (xin > xPos && xin < xPos + w && yin < yPos + h && yin > yPos) {
-   //   println(this+ " registerClick");
+      //   println(this+ " registerClick");
       Tryk = true;
     }
   }
-  void valgt(){
-  triangle(xPos+w/2,yPos+h+10,xPos+w/2-w/4,yPos+h+30,xPos+w/2+w/4,yPos+h+30);
+  void valgt() {
+    triangle(xPos + w/2, yPos + h + 10, xPos + w/2 - w/4, yPos + h + 30, xPos + w/2 + w/4, yPos + h + 30);
   }
   void release() {
     Tryk = false;
-   // println(this+ " release");
+    // println(this+ " release");
   }
 }

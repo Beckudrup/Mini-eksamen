@@ -4,7 +4,7 @@ class DisplayAndInput {
   ArrayList<Button> buttList;
   DisplayAndInput() {
   }
-  void display(ArrayList<Button> buttonList, int screenChange, ArrayList<TextField> TFList,int r) {
+  void display(ArrayList<Button> buttonList, int screenChange, ArrayList<TextField> TFList, int r) {
     this.buttList=buttonList;
     this.screenChange=screenChange;
     this.rightAnswer=r;
@@ -62,7 +62,6 @@ class DisplayAndInput {
       textSize(40);
       text("Fraction", 200, 50);
       buttList.get(rightAnswer).valgt();
-      
     }
   }
   void teacherVectors() {

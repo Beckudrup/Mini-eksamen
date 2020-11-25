@@ -24,6 +24,7 @@ void draw() {
 void buttonAndTextFieldfixer() {
   if (screenChange == 0 && notdoneyet == true) {
     database.setups();
+    database.showExercise();
     buttonList.add(new Button(350, 200, 200, 50, "Teachers login"));
     buttonList.add(new Button(50, 200, 200, 50, "Student login"));
     notdoneyet = false;
@@ -48,29 +49,31 @@ void buttonAndTextFieldfixer() {
   }
 
   if ((screenChange == 4 || screenChange == 5 || screenChange == 6) && notdoneyet == true) {
-    textFieldList.add(new TextField( 200, 100, 200, 50));
+    textFieldList.add(new TextField(200, 100, 200, 50));
     for (int i = 0; i < 4; i++) {
-      textFieldList.add(new TextField( 50+i*150, 200, 80, 50));
-      buttonList.add(new Button(70+i*150, 270, 40, 50, ""));
+      textFieldList.add(new TextField(50 + i * 150, 200, 80, 50));
+      buttonList.add(new Button(70 + i * 150, 270, 40, 50, ""));
     }
     buttonList.add(new Button(20, 530, 80, 50, "Back"));
     buttonList.add(new Button(500, 530, 80, 50, "Next"));
     buttonList.add(new Button(500, 100, 80, 50, "Save"));
     notdoneyet = false;
   }
-  if (screenChange==7) {
+  if (screenChange == 7) {
     buttonList.add(new Button(40, 270, 40, 50, ""));
     buttonList.add(new Button(190, 270, 40, 50, ""));
     buttonList.add(new Button(340, 270, 40, 50, ""));
     buttonList.add(new Button(490, 270, 40, 50, ""));
+    buttonList.add(new Button(20, 530, 80, 50, "Back"));
+    buttonList.add(new Button(500, 530, 80, 50, "Next"));
   }
-  if (screenChange==8) {
+  if (screenChange == 8) {
     buttonList.add(new Button(70, 270, 40, 50, ""));
     buttonList.add(new Button(70, 420, 40, 50, ""));
     buttonList.add(new Button(70, 570, 40, 50, ""));
     buttonList.add(new Button(70, 720, 40, 50, ""));
   }
-  if (screenChange==9) {
+  if (screenChange == 9) {
     buttonList.add(new Button(70, 270, 40, 50, ""));
     buttonList.add(new Button(70, 420, 40, 50, ""));
     buttonList.add(new Button(70, 570, 40, 50, ""));
@@ -97,7 +100,7 @@ void screenChanger() {
 
 void buttonEffects(int nrknap, int onScreen, int toScreen) {
 
-  if (screenChange == onScreen&&changedScreen==false) {
+  if (screenChange == onScreen&&changedScreen == false) {
     if (buttonList.get(nrknap).isButtonPressed()) {
 
       screenChange = toScreen;
@@ -109,24 +112,24 @@ void buttonEffects(int nrknap, int onScreen, int toScreen) {
   }
 }
 void buttonEffectsNoVariables() {
-  if (screenChange == 4||screenChange ==5||screenChange ==6) {
+  if (screenChange == 4 || screenChange == 5 || screenChange == 6) {
     if (buttonList.get(6).isButtonPressed()) {
-
       database.saveExercise(textFieldList.get(0).inPut, textFieldList.get(1).inPut, textFieldList.get(2).inPut, textFieldList.get(3).inPut, textFieldList.get(4).inPut);
       buttonList.clear();
       textFieldList.clear();
       notdoneyet = true;
       rightanswer = 0;
-      k++;
+      // k++;
     }
   }
 
 
-  if (screenChange == 4||screenChange ==5||screenChange ==6||screenChange ==7||screenChange ==8||screenChange ==9) {
-    for (int i =0; i<4; i++)
+  if (screenChange == 4 || screenChange == 5 || screenChange == 6 || screenChange == 7 || screenChange == 8 || screenChange == 9) {
+    for (int i = 0; i < 4; i++) {
       if (buttonList.get(i).isButtonPressed()) {
         rightanswer = i;
       }
+    }
   }
 }
 
@@ -141,31 +144,35 @@ void buttonEffectsDelData() {
 }
 
 void buttonEffectsGetData() {
-  if (buttonList != null && buttonList.size() != 0 && buttonList.get(1).isButtonPressed())
-    println("buttonList.size() > 1", buttonList.size() > 1, "buttonList.get(1).isButtonPressed()", buttonList.get(1).isButtonPressed(), "screenChange == 2", screenChange == 2);
-
   if (screenChange == 7) {
-
-    println("list size = " + list.size());
-
-    if (list.size() == 0) database.showExercise();
-
-    int y = 50;
+    int y = 140;
+    int x = 20;
 
     //println(list.size());
-
-    for (Exercise e : list) {
-      //if (list.get(1)) {
-      /*Methods dd.q(the question), dd.a1(first answer),
-       dd.a2(second answer), dd.a3(third answer), dd.a4(forth answer)*/
-      // println();
-       println("Exercise:" +" " + e.q);
-      text(e.q, 10, y);
+    for (Exercise e : list ) {
+      /*Methods e.q(the question), e.a1(first answer),
+       e.a2(second answer), e.a3(third answer), e.a4(forth answer)*/
+      text(e.q, x, y);
+      x += 100;
       y += 20;
-       println("Answer 1:" +" " + e.a1);
-       println("Answer 2:" +" " + e.a2);
-       println("Answer 3:" +" " + e.a3);
-       println("Answer 4:" +" " + e.a4);
+      text(e.a1, x, y);
+      x += 100;
+      y += 20;
+      text(e.a2, x, y);
+      x += 100;
+      y += 20;
+      text(e.a3, x, y);
+      x += 100;
+      y += 20;
+      text(e.a4, x, y);
+      x += 100;
+      y += 20;
+      //println();
+      //println("Exercise:" +" " + e.q);
+      //println("Answer 1:" +" " + e.a1);
+      //println("Answer 2:" +" " + e.a2);
+      //println("Answer 3:" +" " + e.a3);
+      //println("Answer 4:" +" " + e.a4);
     }
   }
 }

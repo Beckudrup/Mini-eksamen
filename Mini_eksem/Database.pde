@@ -27,7 +27,7 @@ class Database {
 
   void showExercise() {
     db.query("SELECT  * FROM Exercises");
-    list.clear();
+    //list.clear();
     //for (int i = 0; i > )
     while (db.next()) {
       Exercise exercise = new Exercise();
