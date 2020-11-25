@@ -35,6 +35,7 @@ void buttonAndTextFieldfixer() {
     buttonList.add(new Button(10, 200, 125, 50, "Fractions"));
     buttonList.add(new Button(10, 400, 120, 50, "Vectors"));
     buttonList.add(new Button(10, 300, 200, 50, "Trigonemetry"));
+    buttonList.add(new Button(500,500,50,50,"delete database"));
     notdoneyet = false;
   }
   if (screenChange == 2 && notdoneyet == true) {
@@ -57,27 +58,38 @@ void buttonAndTextFieldfixer() {
     buttonList.add(new Button(20, 530, 80, 50, "Back"));
     buttonList.add(new Button(500, 530, 80, 50, "Next"));
     buttonList.add(new Button(500, 100, 80, 50, "Save"));
+    buttonList.add(new Button(20,20,80,50,"Home"));
     notdoneyet = false;
   }
-  if (screenChange == 7) {
-    buttonList.add(new Button(40, 270, 40, 50, ""));
-    buttonList.add(new Button(190, 270, 40, 50, ""));
-    buttonList.add(new Button(340, 270, 40, 50, ""));
-    buttonList.add(new Button(490, 270, 40, 50, ""));
+
+  if (screenChange == 7){
+    buttonList.add(new Button(40,270,40,50,""));
+    buttonList.add(new Button(190,270,40,50,""));
+    buttonList.add(new Button(340,270,40,50,""));
+    buttonList.add(new Button(490,270,40,50,""));
     buttonList.add(new Button(20, 530, 80, 50, "Back"));
     buttonList.add(new Button(500, 530, 80, 50, "Next"));
+    buttonList.add(new Button(20,20,80,50,"Home"));
+    
   }
-  if (screenChange == 8) {
-    buttonList.add(new Button(70, 270, 40, 50, ""));
-    buttonList.add(new Button(70, 420, 40, 50, ""));
-    buttonList.add(new Button(70, 570, 40, 50, ""));
-    buttonList.add(new Button(70, 720, 40, 50, ""));
+  if (screenChange == 8){
+    buttonList.add(new Button(40,270,40,50,""));
+    buttonList.add(new Button(190,270,40,50,""));
+    buttonList.add(new Button(340,270,40,50,""));
+    buttonList.add(new Button(490,270,40,50,""));
+    buttonList.add(new Button(20, 530, 80, 50, "Back"));
+    buttonList.add(new Button(500, 530, 80, 50, "Next"));
+    buttonList.add(new Button(20,20,80,50,"Home"));
   }
-  if (screenChange == 9) {
-    buttonList.add(new Button(70, 270, 40, 50, ""));
-    buttonList.add(new Button(70, 420, 40, 50, ""));
-    buttonList.add(new Button(70, 570, 40, 50, ""));
-    buttonList.add(new Button(70, 720, 40, 50, ""));
+  if (screenChange == 9){
+    buttonList.add(new Button(40,270,40,50,""));
+    buttonList.add(new Button(190,270,40,50,""));
+    buttonList.add(new Button(340,270,40,50,""));
+    buttonList.add(new Button(490,270,40,50,""));
+    buttonList.add(new Button(20, 530, 80, 50, "Back"));
+    buttonList.add(new Button(500, 530, 80, 50, "Next"));
+    buttonList.add(new Button(20,20,80,50,"Home"));
+
   }
 }
 
@@ -91,10 +103,16 @@ void screenChanger() {
     buttonEffects(i, 1, i + 2);//fra teacher til teahcer list of studens
   buttonEffects(0, 3, 1);//fra teacher Student List til teacher
   for (int i = 4; i < 7; i++)
-    buttonEffects(4, i, 1);//fra teacher Student List til teacher
+    buttonEffects(buttonList.size()-1, i, 1);//fra teacher Student List til teacher
   for (int i = 1; i < 4; i++)
     buttonEffects(i, 2, i + 6);//fra Student til Student fractions
+
+  for(int i = 7;i<10;i++){
+  buttonEffects(6, i, 2);//fra Student til Student fractions
+  }  
+
   buttonEffectsGetData();
+
   changedScreen=false;
 }
 
@@ -133,14 +151,27 @@ void buttonEffectsNoVariables() {
   }
 }
 
-void buttonEffectsDelData() {
-  if (buttonList.size() > 1) {
-    if (buttonList.get(1).isButtonPressed()) {
-      if (screenChange == 7) {
-        database.Delete();
-      }
+ for(int i =0;i<4;i++)
+    if (buttonList.get(i).isButtonPressed()) {
+    rightanswer = i;
+     }
+    if (screenChange==7||screenChange==8||screenChange==9){
+    if  (buttonList.get(4).isButtonPressed()) {
+      
     }
-  }
+    if  (buttonList.get(5).isButtonPressed()) {
+      
+    }
+  
+    } 
+   
+}
+if(screenChange==1){
+if(buttonList.get(5).isButtonPressed()){
+database.Delete();
+}
+}
+
 }
 
 void buttonEffectsGetData() {
