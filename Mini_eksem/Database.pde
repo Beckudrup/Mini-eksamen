@@ -27,18 +27,17 @@ class Database {
 
   void showExercise() {
     db.query("SELECT  * FROM Exercises");
-    //list.clear();
-    //for (int i = 0; i > )
-    while (db.next()) {
-      Exercise exercise = new Exercise();
-      exercise.id = db.getInt("questionId");
-      exercise.q = db.getString("question");
-      exercise.a1 = db.getString("answer1");
-      exercise.a2 = db.getString("answer2");
-      exercise.a3 = db.getString("answer3");
-      exercise.a4 = db.getString("answer4");
-      list.add(exercise);
-    }
+    int lastQuestionID = 1;
+    Exercise exercise = new Exercise();
+    db.query("SELECT  * FROM Exercises where questionID = "+ 2);
+    exercise.id = db.getInt("questionId");
+    exercise.q = db.getString("question");
+    exercise.a1 = db.getString("answer1");
+    exercise.a2 = db.getString("answer2");
+    exercise.a3 = db.getString("answer3");
+    exercise.a4 = db.getString("answer4");
+    lastQuestionID++;
+    list.add(exercise);
   }
 
   void Delete() {
