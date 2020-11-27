@@ -5,9 +5,9 @@ class DisplayAndInput {
   DisplayAndInput() {
   }
   void display(ArrayList<Button> buttonList, int screenChange, ArrayList<TextField> TFList, int r) {
-    this.buttList=buttonList;
-    this.screenChange=screenChange;
-    this.rightAnswer=r;
+    this.buttList = buttonList;
+    this.screenChange = screenChange;
+    this.rightAnswer = r;
     background(3, 140, 213);
     loginscreen();
     teacherScreen();
