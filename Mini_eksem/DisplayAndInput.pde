@@ -34,7 +34,8 @@ class DisplayAndInput {
       background(3, 140, 213);
       fill(0, 0, 0);
       textSize(40);
-      text("Welcome", 150, 100);
+      textAlign(CENTER);
+      text("Welcome", width/2, 100);
     }
   }
 
@@ -42,14 +43,16 @@ class DisplayAndInput {
     if (screenChange == 1) {
       fill(0, 0, 0);
       textSize(40);
-      text("Teacher", 200, 100);
+      textAlign(CENTER);
+      text("Teacher", width/2, 100);
     }
   }
   void studentScreen() {
     if (screenChange == 2) {
       fill(0, 0, 0);
       textSize(40);
-      text("Student", 200, 100);
+      textAlign(CENTER);
+      text("Student", width/2, 100);
     }
   }
   void teacherListOfStudendts() {
@@ -60,7 +63,8 @@ class DisplayAndInput {
     if (screenChange == 4) {
       fill(0, 0, 0);
       textSize(40);
-      text("Fraction", 200, 50);
+      text("Fraction", width/2, 50);
+      textAlign(CENTER);
       buttList.get(rightAnswer).valgt();
     }
   }
@@ -68,7 +72,8 @@ class DisplayAndInput {
     if (screenChange == 5) {
       fill(0, 0, 0);
       textSize(40);
-      text("Vectors", 200, 50);
+      text("Vectors", width/2, 50);
+      textAlign(CENTER);
       buttList.get(rightAnswer).valgt();
     }
   }
@@ -76,7 +81,8 @@ class DisplayAndInput {
     if (screenChange == 6) {
       fill(0, 0, 0);
       textSize(40);
-      text("Trigonometry", 200, 50);
+      text("Trigonometry", width/2, 50);
+      textAlign(CENTER);
       buttList.get(rightAnswer).valgt();
     }
   }
@@ -84,7 +90,8 @@ class DisplayAndInput {
     if (screenChange == 7) {
       fill(0, 0, 0);
       textSize(40);
-      text("Vectors", 200, 50);
+      text("Vectors", width/2, 50);
+      textAlign(CENTER);
       buttList.get(rightAnswer).valgt();
     }
   }
@@ -92,7 +99,8 @@ class DisplayAndInput {
     if (screenChange == 8) {
       fill(0, 0, 0);
       textSize(40);
-      text("Fraction", 200, 50);
+      text("Fraction", width/2, 50);
+      textAlign(CENTER);
       buttList.get(rightAnswer).valgt();
     }
   }
@@ -100,7 +108,8 @@ class DisplayAndInput {
     if (screenChange == 9) {
       fill(0, 0, 0);
       textSize(40);
-      text("Trigonometry", 200, 50);
+      text("Trigonometry", width/2, 50);
+      textAlign(CENTER);
       buttList.get(rightAnswer).valgt();
     }
   }

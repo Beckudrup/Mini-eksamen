@@ -19,7 +19,8 @@ class Button {
     fill(0);
     rect(xPos, yPos, w, h);
     fill(255);
-    text(text, xPos + 10, yPos + 35);
+    textAlign(CENTER);
+    text(text, xPos + w/2, yPos + h/2);
   }
   boolean isButtonPressed() {
     return Tryk;

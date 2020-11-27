@@ -11,6 +11,7 @@ boolean changedScreen;
 
 void setup() {
   size(600, 600);
+  
 }
 
 void draw() {
@@ -107,7 +108,7 @@ void screenChanger() {
     buttonEffects(i, 2, i + 6);//fra Student til Student fractions
 
   for (int i = 7; i<10; i++) {
-    buttonEffects(6, i, 2);//fra Student til Student fractions
+    buttonEffects(buttonList.size()-1, i, 2);//fra Student til Student fractions
   }  
   changedScreen=false;
 }
@@ -116,7 +117,7 @@ void buttonEffects(int nrknap, int onScreen, int toScreen) {
 
   if (screenChange == onScreen&&changedScreen == false) {
     if (buttonList.get(nrknap).isButtonPressed()) {
-
+      println("bruh");
       screenChange = toScreen;
       buttonList.clear();
       textFieldList.clear();
@@ -138,18 +139,15 @@ void buttonEffectsNoVariables() {
     }
   }
 
-  /*if (screenChange == 4 || screenChange == 5 || screenChange == 6 || screenChange == 7 || screenChange == 8 || screenChange == 9) {
+  if (screenChange == 4 || screenChange == 5 || screenChange == 6 || screenChange == 7 || screenChange == 8 || screenChange == 9) {
    for (int i = 0; i < 4; i++) {
    if (buttonList.get(i).isButtonPressed()) {
    rightanswer = i;
    }
    }
-   }*/
+   }
 
-  // for (int i =0; i < 4; i++)
-  //if (buttonList.get(i).isButtonPressed()) {
-  //rightanswer = i;
-  //}
+ 
   if (screenChange==7||screenChange==8||screenChange==9) {
     if  (buttonList.get(4).isButtonPressed()) {
     }
