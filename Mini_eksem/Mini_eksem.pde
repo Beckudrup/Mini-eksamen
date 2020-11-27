@@ -9,6 +9,7 @@ int k;
 int rightanswer;
 boolean changedScreen;
 int shownQuestion;
+boolean imshitatcoding;
 
 void setup() {
   size(600, 600);
@@ -102,7 +103,7 @@ void buttonAndTextFieldfixer() {
 
 void screenChanger() {
   buttonEffectsGetData();
-  buttonEffectsNoVariables();
+  
   buttonEffects(0, 0, 1);//fra main til teacher
   buttonEffects(0, 1, 0);//fra teacher til main
   buttonEffects(0, 2, 0);//fra elev til main
@@ -118,6 +119,8 @@ void screenChanger() {
   for (int i = 7; i<10; i++) {
     buttonEffects(6, i, 2);//fra Student til Student fractions
   }  
+  if(changedScreen==false)
+  buttonEffectsNoVariables();
   changedScreen=false;
 }
 
@@ -138,18 +141,20 @@ void buttonEffectsNoVariables() {
   if (screenChange == 4 || screenChange == 5 || screenChange == 6) {
     if (buttonList.get(6).isButtonPressed()) {
       database.saveExercise(textFieldList.get(0).inPut, textFieldList.get(1).inPut, textFieldList.get(2).inPut, textFieldList.get(3).inPut, textFieldList.get(4).inPut);
-      buttonList.clear();
-      textFieldList.clear();
-      notdoneyet = true;
+      //buttonList.clear();
+      //textFieldList.clear();
+      //notdoneyet = true;
       rightanswer = 0;
+      imshitatcoding=true;
       // k++;
     }
   }
 
-  if (screenChange == 4 || screenChange == 5 || screenChange == 6 || screenChange == 7 || screenChange == 8 || screenChange == 9) {
+  if (screenChange == 4 || screenChange == 5 || screenChange == 6 || screenChange == 7 || screenChange == 8 || screenChange == 9&&imshitatcoding==false) {
    for (int i = 0; i < 4; i++) {
-   if (buttonList.get(i).isButtonPressed()) {
-   rightanswer = i;
+  println(buttonList.size());
+  if (buttonList.get(i).isButtonPressed()) {
+  rightanswer = i;
    }
    }
    }
