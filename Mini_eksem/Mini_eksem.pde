@@ -108,7 +108,7 @@ void screenChanger() {
     buttonEffects(i, 2, i + 6);//fra Student til Student fractions
 
   for (int i = 7; i<10; i++) {
-    buttonEffects(buttonList.size()-1, i, 2);//fra Student til Student fractions
+    buttonEffects(6, i, 2);//fra Student til Student fractions
   }  
   changedScreen=false;
 }
@@ -187,7 +187,7 @@ void buttonEffectsGetData() {
       println("Answer 2:" +" " + e.a2);
       println("Answer 3:" +" " + e.a3);
       println("Answer 4:" +" " + e.a4);
-      noLoop();
+      
     }
   }
 }
