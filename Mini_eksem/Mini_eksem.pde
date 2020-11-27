@@ -145,24 +145,27 @@ void buttonEffects(int nrknap, int onScreen, int toScreen) {
 
 void buttonEffectsNoVariables() {
   if (screenChange == 4) {
+    println(buttonList.get(6).isButtonPressed());
     if (buttonList.get(6).isButtonPressed()&&imshitatcoding==false) {
       database.saveExerciseFractions(textFieldList.get(0).inPut, textFieldList.get(1).inPut, textFieldList.get(2).inPut, textFieldList.get(3).inPut, textFieldList.get(4).inPut);
       rightanswer = 0;
-      println(buttonList.get(6).isButtonPressed());
+      
       imshitatcoding=true;
       // k++;
     }
   }
   if (screenChange == 5) {
+    println(buttonList.get(6).isButtonPressed());
     if (buttonList.get(6).isButtonPressed()&&imshitatcoding==false) {
       database.saveExerciseVectors(textFieldList.get(0).inPut, textFieldList.get(1).inPut, textFieldList.get(2).inPut, textFieldList.get(3).inPut, textFieldList.get(4).inPut);
       rightanswer = 0;
-      println(buttonList.get(6).isButtonPressed());
+     
       imshitatcoding=true;
       // k++;
     }
   }
   if (screenChange == 6) {
+    println(buttonList.get(6).isButtonPressed());
     if (buttonList.get(6).isButtonPressed()&&imshitatcoding==false) {
 
       database.saveExerciseTrigonometry(textFieldList.get(0).inPut, textFieldList.get(1).inPut, textFieldList.get(2).inPut, textFieldList.get(3).inPut, textFieldList.get(4).inPut);
@@ -261,7 +264,7 @@ void buttonEffectsGetData() {
       }
 }
 
-void mouseClicked() {
+void mousePressed() {
 
   for (int i = 0; i < buttonList.size(); i++) {
     buttonList.get(i).registerClick(mouseX, mouseY);
