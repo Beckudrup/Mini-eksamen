@@ -71,10 +71,10 @@ void buttonAndTextFieldfixer() {
   }
 
   if (screenChange == 7 && notdoneyet == true) {
-    buttonList.add(new Button(40, 270, 40, 50, ""));
-    buttonList.add(new Button(190, 270, 40, 50, ""));
-    buttonList.add(new Button(340, 270, 40, 50, ""));
-    buttonList.add(new Button(490, 270, 40, 50, ""));
+    buttonList.add(new Button(5, 270, 140, 50, ""));
+    buttonList.add(new Button(155, 270, 140, 50, ""));
+    buttonList.add(new Button(305, 270, 140, 50, ""));
+    buttonList.add(new Button(455, 270, 140, 50, ""));
     buttonList.add(new Button(20, 530, 80, 50, "Back"));
     buttonList.add(new Button(500, 530, 80, 50, "Next"));
     buttonList.add(new Button(20, 20, 80, 50, "Home"));
@@ -82,10 +82,10 @@ void buttonAndTextFieldfixer() {
     notdoneyet = false;
   }
   if (screenChange == 8 && notdoneyet == true) {
-    buttonList.add(new Button(40, 270, 40, 50, ""));
-    buttonList.add(new Button(190, 270, 40, 50, ""));
-    buttonList.add(new Button(340, 270, 40, 50, ""));
-    buttonList.add(new Button(490, 270, 40, 50, ""));
+    buttonList.add(new Button(5, 270, 140, 50, ""));
+    buttonList.add(new Button(155, 270, 140, 50, ""));
+    buttonList.add(new Button(305, 270, 140, 50, ""));
+    buttonList.add(new Button(455, 270, 140, 50, ""));
     buttonList.add(new Button(20, 530, 80, 50, "Back"));
     buttonList.add(new Button(500, 530, 80, 50, "Next"));
     buttonList.add(new Button(20, 20, 80, 50, "Home"));
@@ -93,10 +93,10 @@ void buttonAndTextFieldfixer() {
     notdoneyet = false;
   }
   if (screenChange == 9 && notdoneyet == true) {
-    buttonList.add(new Button(40, 270, 40, 50, ""));
-    buttonList.add(new Button(190, 270, 40, 50, ""));
-    buttonList.add(new Button(340, 270, 40, 50, ""));
-    buttonList.add(new Button(490, 270, 40, 50, ""));
+    buttonList.add(new Button(5, 270, 100, 50, ""));
+    buttonList.add(new Button(155, 270, 100, 50, ""));
+    buttonList.add(new Button(305, 270, 100, 50, ""));
+    buttonList.add(new Button(455, 270, 100, 50, ""));
     buttonList.add(new Button(20, 530, 80, 50, "Back"));
     buttonList.add(new Button(500, 530, 80, 50, "Next"));
     buttonList.add(new Button(20, 20, 80, 50, "Home"));
@@ -207,59 +207,56 @@ void buttonEffectsNoVariables() {
 void buttonEffectsGetData() {
   int i = 1;
   if (screenChange == 7 && i == 1) {
-    int y = 140;
-    int x = 20;
+    int y = 290;
+        int x = 40;
     for (Exercise1 e1 : list1 ) {
       /*Methods e.q(the question), e.a1(first answer),
        e.a2(second answer), e.a3(third answer), e.a4(forth answer)*/
-      text(e1.q, x, y);
-      x += 100;
-      text(e1.a1, x, y);
-      x += 100;
-      text(e1.a2, x, y);
-      x += 100;
-      text(e1.a3, x, y);
-      x += 100;
-      text(e1.a4, x, y);
-      x += 100;
+      text(e1.q, width/2, 140);
+          text(e1.a1, x, y);
+          x += 150;
+          text(e1.a2, x, y);
+          x += 150;
+          text(e1.a3, x, y);
+          x += 150;
+          text(e1.a4, x, y);
+          x += 150;
     }
   } else
     if (screenChange == 8 && i == 1) {
-      int y = 140;
-      int x = 20;
+      int y = 290;
+        int x = 40;
 
       for (Exercise2 e2 : list2 ) {
         /*Methods e.q(the question), e.a1(first answer),
          e.a2(second answer), e.a3(third answer), e.a4(forth answer)*/
-        text(e2.q, x, y);
-        x += 100;
-        text(e2.a1, x, y);
-        x += 100;
-        text(e2.a2, x, y);
-        x += 100;
-        text(e2.a3, x, y);
-        x += 100;
-        text(e2.a4, x, y);
-        x += 100;
+        text(e2.q, width/2, 140);
+          text(e2.a1, x, y);
+          x += 150;
+          text(e2.a2, x, y);
+          x += 150;
+          text(e2.a3, x, y);
+          x += 150;
+          text(e2.a4, x, y);
+          x += 150;
       }
     } else
       if (screenChange == 9 && i == 1) {
-        int y = 140;
-        int x = 20;
+        int y = 290;
+        int x = 40;
 
         for (Exercise3 e3 : list3 ) {
           /*Methods e.q(the question), e.a1(first answer),
            e.a2(second answer), e.a3(third answer), e.a4(forth answer)*/
-          text(e3.q, x, y);
-          x += 100;
+          text(e3.q, width/2, 140);
           text(e3.a1, x, y);
-          x += 100;
+          x += 150;
           text(e3.a2, x, y);
-          x += 100;
+          x += 150;
           text(e3.a3, x, y);
-          x += 100;
+          x += 150;
           text(e3.a4, x, y);
-          x += 100;
+          x += 150;
         }
       }
 }
