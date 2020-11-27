@@ -6,6 +6,7 @@ DisplayAndInput displayAndInput = new DisplayAndInput();
 Database database = new Database(this);
 int screenChange = 0;
 boolean notdoneyet = true;
+boolean clickedDone;
 ArrayList<TextField> textFieldList = new ArrayList();
 int k;
 int rightanswer;
@@ -19,7 +20,7 @@ void setup() {
 
 void draw() {
   clear();
-  //println(buttonList);
+  println(k);
   buttonAndTextFieldfixer();
   displayAndInput.display(buttonList, screenChange, textFieldList, rightanswer);
   screenChanger();
@@ -27,10 +28,11 @@ void draw() {
 
 void buttonAndTextFieldfixer() {
   if (screenChange == 0 && notdoneyet == true) {
+    k = 1;
     database.setups();
-    database.showExerciseFractions(k = 1);
-    database.showExerciseTrigonometry(k = 1);
-    database.showExerciseVectors(k = 1);
+    database.showExerciseFractions(k);
+    database.showExerciseTrigonometry(k);
+    database.showExerciseVectors(k);
 
     buttonList.add(new Button(50, 200, 200, 50, "Teachers login"));
     buttonList.add(new Button(350, 200, 200, 50, "Student login"));
@@ -120,7 +122,7 @@ void screenChanger() {
   for (int i = 7; i<10; i++) {
     buttonEffects(6, i, 2);//fra Student til Student fractions
   }
-  
+
   if (changedScreen == false) {
     buttonEffectsGetData();
     buttonEffectsNoVariables();
@@ -147,7 +149,7 @@ void buttonEffectsNoVariables() {
     if (buttonList.get(6).isButtonPressed()&&imshitatcoding == false) {
       database.saveExerciseFractions(textFieldList.get(0).inPut, textFieldList.get(1).inPut, textFieldList.get(2).inPut, textFieldList.get(3).inPut, textFieldList.get(4).inPut);
       rightanswer = 0;
-      imshitatcoding=true;
+      imshitatcoding = true;
     }
   }
   if (screenChange == 5) {
@@ -182,7 +184,7 @@ void buttonEffectsNoVariables() {
       shownQuestion--;
     }
   }
-  if (screenChange==1) {
+  if (screenChange == 1) {
     if (buttonList.get(5).isButtonPressed()) {
       database.Delete();
     }
@@ -190,47 +192,46 @@ void buttonEffectsNoVariables() {
 }
 
 void buttonEffectsGetData() {
-  database.showExerciseFractions(k);
   if (screenChange == 7) {
     int y = 290;
-        int x = 40;
+    int x = 40;
     for (Exercise1 e1 : list1 ) {
       /*Methods e.q(the question), e.a1(first answer),
        e.a2(second answer), e.a3(third answer), e.a4(forth answer)*/
       text(e1.q, width/2, 140);
-          text(e1.a1, x, y);
-          x += 150;
-          text(e1.a2, x, y);
-          x += 150;
-          text(e1.a3, x, y);
-          x += 150;
-          text(e1.a4, x, y);
-          x += 150;
+      text(e1.a1, x, y);
+      x += 150;
+      text(e1.a2, x, y);
+      x += 150;
+      text(e1.a3, x, y);
+      x += 150;
+      text(e1.a4, x, y);
+      x += 150;
     }
-    if (buttonList.get(4).isButtonPressed()) {
-      k++;
-      println(buttonList.get(4));
-    } else if (buttonList.get(5).isButtonPressed() && k>1) {
+    if (buttonList.get(4).isButtonPressed() && k > 1) {
       k--;
+      println(buttonList.get(4));
+    } else if (buttonList.get(5).isButtonPressed()) {
+      k++;
       println(buttonList.get(5));
     }
   } else
     if (screenChange == 8) {
       int y = 290;
-        int x = 40;
+      int x = 40;
 
       for (Exercise2 e2 : list2 ) {
         /*Methods e.q(the question), e.a1(first answer),
          e.a2(second answer), e.a3(third answer), e.a4(forth answer)*/
         text(e2.q, width/2, 140);
-          text(e2.a1, x, y);
-          x += 150;
-          text(e2.a2, x, y);
-          x += 150;
-          text(e2.a3, x, y);
-          x += 150;
-          text(e2.a4, x, y);
-          x += 150;
+        text(e2.a1, x, y);
+        x += 150;
+        text(e2.a2, x, y);
+        x += 150;
+        text(e2.a3, x, y);
+        x += 150;
+        text(e2.a4, x, y);
+        x += 150;
       }
     } else
       if (screenChange == 9) {
@@ -253,20 +254,23 @@ void buttonEffectsGetData() {
 }
 
 void mousePressed() {
-
-  for (int i = 0; i < buttonList.size(); i++) {
-    buttonList.get(i).registerClick(mouseX, mouseY);
-  }
-  for (int i = 0; i < textFieldList.size(); i++) {
-    textFieldList.get(i).registerClick(mouseX, mouseY);
-   
+  if (clickedDone == false) {
+    for (int i = 0; i < buttonList.size(); i++) {
+      buttonList.get(i).registerClick(mouseX, mouseY);
+    }
+    for (int i = 0; i < textFieldList.size(); i++) {
+      textFieldList.get(i).registerClick(mouseX, mouseY);
+    }
+    clickedDone = true;
   }
 }
 
 void mouseReleased() {
+
   for (int i = 0; i < buttonList.size(); i++) {
     buttonList.get(i).release();
   }
+  clickedDone = false;
 }
 
 void keyTyped() {
