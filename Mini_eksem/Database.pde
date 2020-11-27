@@ -21,60 +21,54 @@ class Database {
     }
   }
   void saveExerciseFractions(String question, String answer1, String answer2, String answer3, String answer4) {
-    /*Teacher key is pressed*/
-    db.query("INSERT INTO Exercises1 (question, answer1, answer2, answer3, answer4) VALUES ('"+ question + "', '"+ answer1 + "', '"+ answer2 + "', '"+ answer3 + "', '"+ answer4 + "');");
+    /*Teacher key is pressed*/    if (question != "" && answer1 != "" && answer2 != "" && answer3 != "" && answer4 != "")
+      db.query("INSERT INTO Exercises1 (question, answer1, answer2, answer3, answer4) VALUES ('"+ question + "', '"+ answer1 + "', '"+ answer2 + "', '"+ answer3 + "', '"+ answer4 + "');");
   }
   void saveExerciseTrigonometry(String question, String answer1, String answer2, String answer3, String answer4) {
-    /*Teacher key is pressed*/
-    db.query("INSERT INTO Exercises2 (question, answer1, answer2, answer3, answer4) VALUES ('"+ question + "', '"+ answer1 + "', '"+ answer2 + "', '"+ answer3 + "', '"+ answer4 + "');");
+    /*Teacher key is pressed*/    if (question != "" && answer1 != "" && answer2 != "" && answer3 != "" && answer4 != "")
+      db.query("INSERT INTO Exercises2 (question, answer1, answer2, answer3, answer4) VALUES ('"+ question + "', '"+ answer1 + "', '"+ answer2 + "', '"+ answer3 + "', '"+ answer4 + "');");
   }
   void saveExerciseVectors(String question, String answer1, String answer2, String answer3, String answer4) {
-    /*Teacher key is pressed*/
-    db.query("INSERT INTO Exercises3 (question, answer1, answer2, answer3, answer4) VALUES ('"+ question + "', '"+ answer1 + "', '"+ answer2 + "', '"+ answer3 + "', '"+ answer4 + "');");
+    /*Teacher key is pressed*/    if (question != "" && answer1 != "" && answer2 != "" && answer3 != "" && answer4 != "")
+      db.query("INSERT INTO Exercises3 (question, answer1, answer2, answer3, answer4) VALUES ('"+ question + "', '"+ answer1 + "', '"+ answer2 + "', '"+ answer3 + "', '"+ answer4 + "');");
   }
 
-  void showExerciseFractions() {
+  void showExerciseFractions(int k) {
     db.query("SELECT  * FROM Exercises1");
-    int lastQuestionID = 1;
     Exercise1 exercise1 = new Exercise1();
-    db.query("SELECT  * FROM Exercises1 where questionID = "+ 1);
+    db.query("SELECT  * FROM Exercises1 where questionID = "+ k);
     exercise1.id = db.getInt("questionId");
     exercise1.q = db.getString("question");
     exercise1.a1 = db.getString("answer1");
     exercise1.a2 = db.getString("answer2");
     exercise1.a3 = db.getString("answer3");
     exercise1.a4 = db.getString("answer4");
-    lastQuestionID++;
     list1.add(exercise1);
   }
 
-  void showExerciseTrigonometry() {
+  void showExerciseTrigonometry(int k) {
     db.query("SELECT  * FROM Exercises2");
-    int lastQuestionID = 1;
     Exercise2 exercise2 = new Exercise2();
-    db.query("SELECT  * FROM Exercises2 where questionID = "+ 1);
+    db.query("SELECT  * FROM Exercises2 where questionID = "+ k);
     exercise2.id = db.getInt("questionId");
     exercise2.q = db.getString("question");
     exercise2.a1 = db.getString("answer1");
     exercise2.a2 = db.getString("answer2");
     exercise2.a3 = db.getString("answer3");
     exercise2.a4 = db.getString("answer4");
-    lastQuestionID++;
     list2.add(exercise2);
   }
 
-  void showExerciseVectors() {
+  void showExerciseVectors(int k) {
     db.query("SELECT  * FROM Exercises3");
-    int lastQuestionID = 1;
     Exercise3 exercise3 = new Exercise3();
-    db.query("SELECT  * FROM Exercises3 where questionID = "+ 1);
+    db.query("SELECT  * FROM Exercises3 where questionID = "+ k);
     exercise3.id = db.getInt("questionId");
     exercise3.q = db.getString("question");
     exercise3.a1 = db.getString("answer1");
     exercise3.a2 = db.getString("answer2");
     exercise3.a3 = db.getString("answer3");
     exercise3.a4 = db.getString("answer4");
-    lastQuestionID++;
     list3.add(exercise3);
   }
 
