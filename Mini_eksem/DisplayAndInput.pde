@@ -65,7 +65,7 @@ class DisplayAndInput {
       textSize(40);
       text("Fraction", width/2, 50);
       textAlign(CENTER);
-      buttList.get(rightAnswer).valgt();
+     buttList.get(rightAnswer).valgt();
     }
   }
   void teacherVectors() {
@@ -86,22 +86,22 @@ class DisplayAndInput {
       buttList.get(rightAnswer).valgt();
     }
   }
-  void studentVectors() {
-    if (screenChange == 7) {
-      fill(0, 0, 0);
-      textSize(40);
-      text("Vectors", width/2, 50);
-      textAlign(CENTER);
-      buttList.get(rightAnswer).valgt();
-    }
-  }
   void studentFractions() {
-    if (screenChange == 8) {
+    if (screenChange == 7) {
       fill(0, 0, 0);
       textSize(40);
       text("Fraction", width/2, 50);
       textAlign(CENTER);
       buttList.get(rightAnswer).valgt();
+    }
+  }
+    void studentVectors() {
+    if (screenChange == 8) {
+      fill(0, 0, 0);
+      textSize(40);
+      text("Vectors", width/2, 50);
+      textAlign(CENTER);
+     buttList.get(rightAnswer).valgt();
     }
   }
   void studentTrigonometry() {
@@ -110,7 +110,8 @@ class DisplayAndInput {
       textSize(40);
       text("Trigonometry", width/2, 50);
       textAlign(CENTER);
-      buttList.get(rightAnswer).valgt();
+     buttList.get(rightAnswer).valgt();
     }
   }
+  
 }

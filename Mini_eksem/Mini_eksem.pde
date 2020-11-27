@@ -10,6 +10,8 @@ ArrayList<TextField> textFieldList = new ArrayList();
 int k;
 int rightanswer;
 boolean changedScreen;
+int shownQuestion;
+boolean imshitatcoding;
 
 void setup() {
   size(600, 600);
@@ -40,7 +42,7 @@ void buttonAndTextFieldfixer() {
     buttonList.add(new Button(10, 200, 125, 50, "Fractions"));
     buttonList.add(new Button(10, 400, 120, 50, "Vectors"));
     buttonList.add(new Button(10, 300, 200, 50, "Trigonemetry"));
-    buttonList.add(new Button(500, 500, 50, 50, "delete database"));
+    buttonList.add(new Button(400, 500, 200, 50, "delete database"));
     notdoneyet = false;
   }
   if (screenChange == 2 && notdoneyet == true) {
@@ -64,10 +66,11 @@ void buttonAndTextFieldfixer() {
     buttonList.add(new Button(500, 530, 80, 50, "Next"));
     buttonList.add(new Button(500, 100, 80, 50, "Save"));
     buttonList.add(new Button(20, 20, 80, 50, "Home"));
+    shownQuestion=0;
     notdoneyet = false;
   }
 
-  if (screenChange == 7) {
+  if (screenChange == 7 && notdoneyet == true) {
     buttonList.add(new Button(40, 270, 40, 50, ""));
     buttonList.add(new Button(190, 270, 40, 50, ""));
     buttonList.add(new Button(340, 270, 40, 50, ""));
@@ -75,8 +78,10 @@ void buttonAndTextFieldfixer() {
     buttonList.add(new Button(20, 530, 80, 50, "Back"));
     buttonList.add(new Button(500, 530, 80, 50, "Next"));
     buttonList.add(new Button(20, 20, 80, 50, "Home"));
+    shownQuestion=0;
+    notdoneyet = false;
   }
-  if (screenChange == 8) {
+  if (screenChange == 8 && notdoneyet == true) {
     buttonList.add(new Button(40, 270, 40, 50, ""));
     buttonList.add(new Button(190, 270, 40, 50, ""));
     buttonList.add(new Button(340, 270, 40, 50, ""));
@@ -84,8 +89,10 @@ void buttonAndTextFieldfixer() {
     buttonList.add(new Button(20, 530, 80, 50, "Back"));
     buttonList.add(new Button(500, 530, 80, 50, "Next"));
     buttonList.add(new Button(20, 20, 80, 50, "Home"));
+    shownQuestion=0;
+    notdoneyet = false;
   }
-  if (screenChange == 9) {
+  if (screenChange == 9 && notdoneyet == true) {
     buttonList.add(new Button(40, 270, 40, 50, ""));
     buttonList.add(new Button(190, 270, 40, 50, ""));
     buttonList.add(new Button(340, 270, 40, 50, ""));
@@ -93,12 +100,14 @@ void buttonAndTextFieldfixer() {
     buttonList.add(new Button(20, 530, 80, 50, "Back"));
     buttonList.add(new Button(500, 530, 80, 50, "Next"));
     buttonList.add(new Button(20, 20, 80, 50, "Home"));
+    shownQuestion=0;
+    notdoneyet = false;
   }
 }
 
 void screenChanger() {
   buttonEffectsGetData();
-  buttonEffectsNoVariables();
+  
   buttonEffects(0, 0, 1);//fra main til teacher
   buttonEffects(0, 1, 0);//fra teacher til main
   buttonEffects(0, 2, 0);//fra elev til main
@@ -114,6 +123,8 @@ void screenChanger() {
   for (int i = 7; i<10; i++) {
     buttonEffects(6, i, 2);//fra Student til Student fractions
   }  
+  if(changedScreen==false)
+  buttonEffectsNoVariables();
   changedScreen=false;
 }
 
@@ -121,7 +132,7 @@ void buttonEffects(int nrknap, int onScreen, int toScreen) {
 
   if (screenChange == onScreen&&changedScreen == false) {
     if (buttonList.get(nrknap).isButtonPressed()) {
-      //println("bruh");
+
       screenChange = toScreen;
       buttonList.clear();
       textFieldList.clear();
@@ -154,27 +165,34 @@ void buttonEffectsNoVariables() {
   }
   if (screenChange == 6) {
     if (buttonList.get(6).isButtonPressed()) {
+
       database.saveExerciseTrigonometry(textFieldList.get(0).inPut, textFieldList.get(1).inPut, textFieldList.get(2).inPut, textFieldList.get(3).inPut, textFieldList.get(4).inPut);
-      buttonList.clear();
-      textFieldList.clear();
-      notdoneyet = true;
+      
       rightanswer = 0;
+      imshitatcoding=true;
       // k++;
     }
   }
 
-  if (screenChange == 4 || screenChange == 5 || screenChange == 6 || screenChange == 7 || screenChange == 8 || screenChange == 9) {
-    for (int i = 0; i < 4; i++) {
-      if (buttonList.get(i).isButtonPressed()) {
-        rightanswer = i;
-      }
-    }
-  }
 
-  if (screenChange == 7|| screenChange == 8 || screenChange == 9) {
+  if (screenChange == 4 || screenChange == 5 || screenChange == 6 || screenChange == 7 || screenChange == 8 || screenChange == 9&&imshitatcoding==false) {
+   for (int i = 0; i < 4; i++) {
+  println(buttonList.size());
+  if (buttonList.get(i).isButtonPressed()) {
+  rightanswer = i;
+   }
+   }
+   }
+
+ 
+  if (screenChange==7||screenChange==8||screenChange==9) {
+
+  
     if  (buttonList.get(4).isButtonPressed()) {
+      shownQuestion++;
     }
-    if  (buttonList.get(5).isButtonPressed()) {
+    if  (buttonList.get(5).isButtonPressed()&&shownQuestion>0) {
+      shownQuestion--;
     }
   }
   if (screenChange==1) {
