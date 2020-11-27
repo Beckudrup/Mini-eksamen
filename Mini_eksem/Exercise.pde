@@ -5,7 +5,6 @@ class Exercise1 {
   String a2;
   String a3;
   String a4;
-  ;
 }
 
 class Exercise2 {
@@ -15,7 +14,6 @@ class Exercise2 {
   String a2;
   String a3;
   String a4;
-  ;
 }
 
 class Exercise3 {
@@ -25,5 +23,4 @@ class Exercise3 {
   String a2;
   String a3;
   String a4;
-  ;
 }

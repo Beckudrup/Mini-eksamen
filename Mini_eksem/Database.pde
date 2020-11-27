@@ -14,12 +14,10 @@ class Database {
   void setups()
   {
     db = new SQLite(p, "test.db" );  // open database file
-
-    if (db.connect() )
-    {
-      db.query( "SELECT * FROM Exercises1"); // choice of data
+    if (db.connect()){
     }
   }
+
   void saveExerciseFractions(String question, String answer1, String answer2, String answer3, String answer4) {
     /*Teacher key is pressed*/    if (question != "" && answer1 != "" && answer2 != "" && answer3 != "" && answer4 != "")
       db.query("INSERT INTO Exercises1 (question, answer1, answer2, answer3, answer4) VALUES ('"+ question + "', '"+ answer1 + "', '"+ answer2 + "', '"+ answer3 + "', '"+ answer4 + "');");
@@ -32,11 +30,11 @@ class Database {
     /*Teacher key is pressed*/    if (question != "" && answer1 != "" && answer2 != "" && answer3 != "" && answer4 != "")
       db.query("INSERT INTO Exercises3 (question, answer1, answer2, answer3, answer4) VALUES ('"+ question + "', '"+ answer1 + "', '"+ answer2 + "', '"+ answer3 + "', '"+ answer4 + "');");
   }
+  
 
   void showExerciseFractions(int k) {
-    db.query("SELECT  * FROM Exercises1");
     Exercise1 exercise1 = new Exercise1();
-    db.query("SELECT  * FROM Exercises1 where questionID = "+ k);
+    db.query("SELECT * FROM Exercises1 where questionID = "+ k);
     exercise1.id = db.getInt("questionId");
     exercise1.q = db.getString("question");
     exercise1.a1 = db.getString("answer1");
@@ -47,9 +45,9 @@ class Database {
   }
 
   void showExerciseTrigonometry(int k) {
-    db.query("SELECT  * FROM Exercises2");
+    db.query("SELECT * FROM Exercises2");
     Exercise2 exercise2 = new Exercise2();
-    db.query("SELECT  * FROM Exercises2 where questionID = "+ k);
+    db.query("SELECT * FROM Exercises2 where questionID = "+ k);
     exercise2.id = db.getInt("questionId");
     exercise2.q = db.getString("question");
     exercise2.a1 = db.getString("answer1");
@@ -60,9 +58,9 @@ class Database {
   }
 
   void showExerciseVectors(int k) {
-    db.query("SELECT  * FROM Exercises3");
+    db.query("SELECT * FROM Exercises3");
     Exercise3 exercise3 = new Exercise3();
-    db.query("SELECT  * FROM Exercises3 where questionID = "+ k);
+    db.query("SELECT * FROM Exercises3 where questionID = "+ k);
     exercise3.id = db.getInt("questionId");
     exercise3.q = db.getString("question");
     exercise3.a1 = db.getString("answer1");

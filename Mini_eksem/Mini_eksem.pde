@@ -12,7 +12,6 @@ int k;
 int rightanswer;
 boolean changedScreen;
 int shownQuestion;
-boolean imshitatcoding;
 
 void setup() {
   size(600, 600);
@@ -20,7 +19,6 @@ void setup() {
 
 void draw() {
   clear();
-  println(k);
   buttonAndTextFieldfixer();
   displayAndInput.display(buttonList, screenChange, textFieldList, rightanswer);
   screenChanger();
@@ -30,10 +28,6 @@ void buttonAndTextFieldfixer() {
   if (screenChange == 0 && notdoneyet == true) {
     k = 1;
     database.setups();
-    database.showExerciseFractions(k);
-    database.showExerciseTrigonometry(k);
-    database.showExerciseVectors(k);
-
     buttonList.add(new Button(50, 200, 200, 50, "Teachers login"));
     buttonList.add(new Button(350, 200, 200, 50, "Student login"));
     notdoneyet = false;
@@ -68,7 +62,6 @@ void buttonAndTextFieldfixer() {
     buttonList.add(new Button(500, 530, 80, 50, "Next"));
     buttonList.add(new Button(500, 100, 80, 50, "Save"));
     buttonList.add(new Button(15, 20, 80, 50, "Home"));
-    shownQuestion=0;
     notdoneyet = false;
   }
 
@@ -80,7 +73,6 @@ void buttonAndTextFieldfixer() {
     buttonList.add(new Button(20, 530, 80, 50, "Back"));
     buttonList.add(new Button(500, 530, 80, 50, "Next"));
     buttonList.add(new Button(20, 20, 80, 50, "Home"));
-    shownQuestion=0;
     notdoneyet = false;
   }
   if (screenChange == 8 && notdoneyet == true) {
@@ -91,7 +83,6 @@ void buttonAndTextFieldfixer() {
     buttonList.add(new Button(20, 530, 80, 50, "Back"));
     buttonList.add(new Button(500, 530, 80, 50, "Next"));
     buttonList.add(new Button(20, 20, 80, 50, "Home"));
-    shownQuestion=0;
     notdoneyet = false;
   }
   if (screenChange == 9 && notdoneyet == true) {
@@ -102,7 +93,6 @@ void buttonAndTextFieldfixer() {
     buttonList.add(new Button(20, 530, 80, 50, "Back"));
     buttonList.add(new Button(500, 530, 80, 50, "Next"));
     buttonList.add(new Button(20, 20, 80, 50, "Home"));
-    shownQuestion = 0;
     notdoneyet = false;
   }
 }
@@ -128,7 +118,6 @@ void screenChanger() {
     buttonEffectsNoVariables();
   }
   changedScreen = false;
-  imshitatcoding = false;
 }
 
 void buttonEffects(int nrknap, int onScreen, int toScreen) {
@@ -146,33 +135,29 @@ void buttonEffects(int nrknap, int onScreen, int toScreen) {
 
 void buttonEffectsNoVariables() {
   if (screenChange == 4) {
-    if (buttonList.get(6).isButtonPressed()&&imshitatcoding == false) {
+    if (buttonList.get(6).isButtonPressed()) {
       database.saveExerciseFractions(textFieldList.get(0).inPut, textFieldList.get(1).inPut, textFieldList.get(2).inPut, textFieldList.get(3).inPut, textFieldList.get(4).inPut);
       rightanswer = 0;
-      imshitatcoding = true;
       buttonList.get(6).release();
     }
   }
   if (screenChange == 5) {
-    if (buttonList.get(6).isButtonPressed() && imshitatcoding == false) {
+    if (buttonList.get(6).isButtonPressed()) {
       database.saveExerciseVectors(textFieldList.get(0).inPut, textFieldList.get(1).inPut, textFieldList.get(2).inPut, textFieldList.get(3).inPut, textFieldList.get(4).inPut);
       rightanswer = 0;
-      imshitatcoding = true;
       buttonList.get(6).release();
     }
   }
   if (screenChange == 6) {
-    if (buttonList.get(6).isButtonPressed() && imshitatcoding == false) {
+    if (buttonList.get(6).isButtonPressed()) {
       database.saveExerciseTrigonometry(textFieldList.get(0).inPut, textFieldList.get(1).inPut, textFieldList.get(2).inPut, textFieldList.get(3).inPut, textFieldList.get(4).inPut);
       rightanswer = 0;
-      imshitatcoding = true;
       buttonList.get(6).release();
     }
   }
 
-  if (screenChange == 4 || screenChange == 5 || screenChange == 6 || screenChange == 7 || screenChange == 8 || screenChange == 9&&imshitatcoding==false) {
+  if (screenChange == 4 || screenChange == 5 || screenChange == 6 || screenChange == 7 || screenChange == 8 || screenChange == 9) {
     for (int i = 0; i < 4; i++) {
-      //println(buttonList.size());
       if (buttonList.get(i).isButtonPressed()) {
         rightanswer = i;
         buttonList.get(i).release();
@@ -180,16 +165,6 @@ void buttonEffectsNoVariables() {
     }
   }
 
-  if (screenChange == 7 || screenChange == 8 || screenChange == 9) {
-    if  (buttonList.get(4).isButtonPressed()) {
-      shownQuestion++;
-      buttonList.get(4).release();
-    }
-    if  (buttonList.get(5).isButtonPressed()&&shownQuestion>0) {
-      shownQuestion--;
-      buttonList.get(5).release();
-    }
-  }
   if (screenChange == 1) {
     if (buttonList.get(5).isButtonPressed()) {
       database.Delete();
@@ -199,65 +174,94 @@ void buttonEffectsNoVariables() {
 }
 
 void buttonEffectsGetData() {
-  if (screenChange == 7) {
-    int y = 290;
-    int x = 40;
-    for (Exercise1 e1 : list1 ) {
-      /*Methods e.q(the question), e.a1(first answer),
-       e.a2(second answer), e.a3(third answer), e.a4(forth answer)*/
-      text(e1.q, width/2, 140);
-      text(e1.a1, x, y);
-      x += 150;
-      text(e1.a2, x, y);
-      x += 150;
-      text(e1.a3, x, y);
-      x += 150;
-      text(e1.a4, x, y);
-      x += 150;
-    }
-    if (buttonList.get(4).isButtonPressed() && k > 1) {
-      k--;
-      println(buttonList.get(4));
-     buttonList.get(4).release();
-    } else if (buttonList.get(5).isButtonPressed()) {
-      k++;
-      println(buttonList.get(5));
-      buttonList.get(5).release();
-    }
-  } else
-    if (screenChange == 8) {
+  if (screenChange == 7 ) {
+    database.showExerciseFractions(k);
+    if (list1.size() != 0) {
       int y = 290;
       int x = 40;
-
-      for (Exercise2 e2 : list2 ) {
-        /*Methods e.q(the question), e.a1(first answer),
-         e.a2(second answer), e.a3(third answer), e.a4(forth answer)*/
-        text(e2.q, width/2, 140);
-        text(e2.a1, x, y);
+      for (Exercise1 e1 : list1 ) {
+        /*Methods e1.q(the question), e1.a1(first answer),
+         e1.a2(second answer), e1.a3(third answer), e1.a4(forth answer)*/
+        text(e1.q, width/2, 140);
+        text(e1.a1, x, y);
         x += 150;
-        text(e2.a2, x, y);
+        text(e1.a2, x, y);
         x += 150;
-        text(e2.a3, x, y);
+        text(e1.a3, x, y);
         x += 150;
-        text(e2.a4, x, y);
+        text(e1.a4, x, y);
         x += 150;
       }
-    } else
-      if (screenChange == 9) {
+      if (buttonList.get(4).isButtonPressed() && k > 1) {
+        k--;
+        println(buttonList.get(4));
+        buttonList.get(4).release();
+        //Skulle helst stoppe k i at stige når den bliver større end maximum questionID
+      } else if (buttonList.get(5).isButtonPressed()) {
+        k++;
+        println(buttonList.get(5));
+        buttonList.get(5).release();
+      }
+    }
+  } 
+    if (screenChange == 8) {
+      database.showExerciseTrigonometry(k);
+      if (list2.size() != 0) {
         int y = 290;
         int x = 40;
-        for (Exercise3 e3 : list3 ) {
-          /*Methods e.q(the question), e.a1(first answer),
-           e.a2(second answer), e.a3(third answer), e.a4(forth answer)*/
-          text(e3.q, width/2, 140);
-          text(e3.a1, x, y);
+        for (Exercise2 e2 : list2 ) {
+          /*Methods e2.q(the question), e2.a1(first answer),
+           e2.a2(second answer), e2.a3(third answer), e2.a4(forth answer)*/
+          text(e2.q, width/2, 140);
+          text(e2.a1, x, y);
           x += 150;
-          text(e3.a2, x, y);
+          text(e2.a2, x, y);
           x += 150;
-          text(e3.a3, x, y);
+          text(e2.a3, x, y);
           x += 150;
-          text(e3.a4, x, y);
+          text(e2.a4, x, y);
           x += 150;
+        }
+        if (buttonList.get(4).isButtonPressed() && k > 1) {
+          k--;
+          println(buttonList.get(4));
+          buttonList.get(4).release();
+          //Skulle helst stoppe k i at stige når den bliver større end maximum questionID
+        } else if (buttonList.get(5).isButtonPressed()) {
+          k++;
+          println(buttonList.get(5));
+          buttonList.get(5).release();
+        }
+      }
+    } 
+      if (screenChange == 9) {
+        database.showExerciseVectors(k);
+        if (list3.size() != 0) {
+          int y = 290;
+          int x = 40;
+          for (Exercise3 e3 : list3 ) {
+            /*Methods e3.q(the question), e3.a1(first answer),
+             e3.a2(second answer), e3.a3(third answer), e3.a4(forth answer)*/
+            text(e3.q, width/2, 140);
+            text(e3.a1, x, y);
+            x += 150;
+            text(e3.a2, x, y);
+            x += 150;
+            text(e3.a3, x, y);
+            x += 150;
+            text(e3.a4, x, y);
+            x += 150;
+          }
+          if (buttonList.get(4).isButtonPressed() && k > 1) {
+            k--;
+            println(buttonList.get(4));
+            buttonList.get(4).release();
+            //Skulle helst stoppe k i at stige når den bliver større end maximum questionID
+          } else if (buttonList.get(5).isButtonPressed()) {
+            k++;
+            println(buttonList.get(5));
+            buttonList.get(5).release();
+          }
         }
       }
 }
