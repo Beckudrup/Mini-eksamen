@@ -107,7 +107,7 @@ void buttonAndTextFieldfixer() {
 
 void screenChanger() {
   buttonEffectsGetData();
-  
+
   buttonEffects(0, 0, 1);//fra main til teacher
   buttonEffects(0, 1, 0);//fra teacher til main
   buttonEffects(0, 2, 0);//fra elev til main
@@ -123,8 +123,8 @@ void screenChanger() {
   for (int i = 7; i<10; i++) {
     buttonEffects(6, i, 2);//fra Student til Student fractions
   }  
-  if(changedScreen==false)
-  buttonEffectsNoVariables();
+  if (changedScreen==false)
+    buttonEffectsNoVariables();
   changedScreen=false;
   imshitatcoding=false;
 }
@@ -147,20 +147,18 @@ void buttonEffectsNoVariables() {
   if (screenChange == 4) {
     if (buttonList.get(6).isButtonPressed()&&imshitatcoding==false) {
       database.saveExerciseFractions(textFieldList.get(0).inPut, textFieldList.get(1).inPut, textFieldList.get(2).inPut, textFieldList.get(3).inPut, textFieldList.get(4).inPut);
-
-      
       rightanswer = 0;
-       imshitatcoding=true;
+      println(buttonList.get(6).isButtonPressed());
+      imshitatcoding=true;
       // k++;
     }
   }
   if (screenChange == 5) {
     if (buttonList.get(6).isButtonPressed()&&imshitatcoding==false) {
       database.saveExerciseVectors(textFieldList.get(0).inPut, textFieldList.get(1).inPut, textFieldList.get(2).inPut, textFieldList.get(3).inPut, textFieldList.get(4).inPut);
-     
-      
       rightanswer = 0;
-       imshitatcoding=true;
+      println(buttonList.get(6).isButtonPressed());
+      imshitatcoding=true;
       // k++;
     }
   }
@@ -168,7 +166,7 @@ void buttonEffectsNoVariables() {
     if (buttonList.get(6).isButtonPressed()&&imshitatcoding==false) {
 
       database.saveExerciseTrigonometry(textFieldList.get(0).inPut, textFieldList.get(1).inPut, textFieldList.get(2).inPut, textFieldList.get(3).inPut, textFieldList.get(4).inPut);
-      
+
       rightanswer = 0;
       imshitatcoding=true;
       // k++;
@@ -177,18 +175,18 @@ void buttonEffectsNoVariables() {
 
 
   if (screenChange == 4 || screenChange == 5 || screenChange == 6 || screenChange == 7 || screenChange == 8 || screenChange == 9&&imshitatcoding==false) {
-   for (int i = 0; i < 4; i++) {
-  //println(buttonList.size());
-  if (buttonList.get(i).isButtonPressed()) {
-  rightanswer = i;
-   }
-   }
-   }
+    for (int i = 0; i < 4; i++) {
+      //println(buttonList.size());
+      if (buttonList.get(i).isButtonPressed()) {
+        rightanswer = i;
+      }
+    }
+  }
 
- 
+
   if (screenChange==7||screenChange==8||screenChange==9) {
 
-  
+
     if  (buttonList.get(4).isButtonPressed()) {
       shownQuestion++;
     }
@@ -208,8 +206,6 @@ void buttonEffectsGetData() {
   if (screenChange == 7 && i == 1) {
     int y = 140;
     int x = 20;
-
-    //println(list.size());
     for (Exercise1 e1 : list1 ) {
       /*Methods e.q(the question), e.a1(first answer),
        e.a2(second answer), e.a3(third answer), e.a4(forth answer)*/
@@ -229,7 +225,6 @@ void buttonEffectsGetData() {
       int y = 140;
       int x = 20;
 
-      println(list2.size());
       for (Exercise2 e2 : list2 ) {
         /*Methods e.q(the question), e.a1(first answer),
          e.a2(second answer), e.a3(third answer), e.a4(forth answer)*/
@@ -249,7 +244,6 @@ void buttonEffectsGetData() {
         int y = 140;
         int x = 20;
 
-        println(list3.size());
         for (Exercise3 e3 : list3 ) {
           /*Methods e.q(the question), e.a1(first answer),
            e.a2(second answer), e.a3(third answer), e.a4(forth answer)*/
