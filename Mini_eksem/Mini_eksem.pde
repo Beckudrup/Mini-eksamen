@@ -32,12 +32,12 @@ void buttonAndTextFieldfixer() {
     database.showExerciseTrigonometry();
     database.showExerciseVectors();
 
-    buttonList.add(new Button(350, 200, 200, 50, "Teachers login"));
-    buttonList.add(new Button(50, 200, 200, 50, "Student login"));
+    buttonList.add(new Button(50, 200, 200, 50, "Teachers login"));
+    buttonList.add(new Button(350, 200, 200, 50, "Student login"));
     notdoneyet = false;
   }
   if (screenChange == 1&&notdoneyet == true) {
-    buttonList.add(new Button(20, 20, 75, 50, "Back"));
+    buttonList.add(new Button(20, 20, 75, 50, "Home"));
     buttonList.add(new Button(400, 200, 125, 90, "List of \nstudents"));
     buttonList.add(new Button(10, 200, 125, 50, "Fractions"));
     buttonList.add(new Button(10, 400, 120, 50, "Vectors"));
@@ -46,26 +46,26 @@ void buttonAndTextFieldfixer() {
     notdoneyet = false;
   }
   if (screenChange == 2 && notdoneyet == true) {
-    buttonList.add(new Button(20, 530, 80, 50, "Back"));
+    buttonList.add(new Button(20, 530, 80, 50, "Home"));
     buttonList.add(new Button(10, 200, 125, 50, "Fractions"));
     buttonList.add(new Button(10, 400, 120, 50, "Vectors"));
     buttonList.add(new Button(10, 300, 200, 50, "Trigonemetry"));
     notdoneyet = false;
   }
   if (screenChange == 3 && notdoneyet == true) {
-    buttonList.add(new Button(20, 530, 80, 50, "Back"));
+    buttonList.add(new Button(20, 530, 80, 50, "Home"));
   }
 
   if ((screenChange == 4 || screenChange == 5 || screenChange == 6) && notdoneyet == true) {
     textFieldList.add(new TextField(200, 100, 200, 50));
     for (int i = 0; i < 4; i++) {
-      textFieldList.add(new TextField(50 + i * 150, 200, 80, 50));
-      buttonList.add(new Button(70 + i * 150, 270, 40, 50, ""));
+      textFieldList.add(new TextField(15 + i * 150, 200, 120, 50));
+      buttonList.add(new Button(55 + i * 150, 270, 40, 50, ""));
     }
-    buttonList.add(new Button(20, 530, 80, 50, "Back"));
+    buttonList.add(new Button(15, 530, 80, 50, "Back"));
     buttonList.add(new Button(500, 530, 80, 50, "Next"));
     buttonList.add(new Button(500, 100, 80, 50, "Save"));
-    buttonList.add(new Button(20, 20, 80, 50, "Home"));
+    buttonList.add(new Button(15, 20, 80, 50, "Home"));
     shownQuestion=0;
     notdoneyet = false;
   }
@@ -268,6 +268,7 @@ void mousePressed() {
   }
   for (int i = 0; i < textFieldList.size(); i++) {
     textFieldList.get(i).registerClick(mouseX, mouseY);
+   
   }
 }
 

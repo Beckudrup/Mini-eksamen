@@ -23,7 +23,13 @@ class TextField {
     fill(255);
     rect(x, y, w, h);
     fill(0);
+    textAlign(LEFT);
     text(inPut, x+10, y+40);
+    valgt();
+  }
+  void valgt(){
+    if(isInside)
+  triangle(x-10,y+h/2,x-20,y+h/3,x-20,y+h-h/3);
   }
   void textInsideField(char key) {
     if (isInside) {
