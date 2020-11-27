@@ -150,6 +150,7 @@ void buttonEffectsNoVariables() {
       database.saveExerciseFractions(textFieldList.get(0).inPut, textFieldList.get(1).inPut, textFieldList.get(2).inPut, textFieldList.get(3).inPut, textFieldList.get(4).inPut);
       rightanswer = 0;
       imshitatcoding = true;
+      buttonList.get(6).release();
     }
   }
   if (screenChange == 5) {
@@ -157,6 +158,7 @@ void buttonEffectsNoVariables() {
       database.saveExerciseVectors(textFieldList.get(0).inPut, textFieldList.get(1).inPut, textFieldList.get(2).inPut, textFieldList.get(3).inPut, textFieldList.get(4).inPut);
       rightanswer = 0;
       imshitatcoding = true;
+      buttonList.get(6).release();
     }
   }
   if (screenChange == 6) {
@@ -164,6 +166,7 @@ void buttonEffectsNoVariables() {
       database.saveExerciseTrigonometry(textFieldList.get(0).inPut, textFieldList.get(1).inPut, textFieldList.get(2).inPut, textFieldList.get(3).inPut, textFieldList.get(4).inPut);
       rightanswer = 0;
       imshitatcoding = true;
+      buttonList.get(6).release();
     }
   }
 
@@ -172,6 +175,7 @@ void buttonEffectsNoVariables() {
       //println(buttonList.size());
       if (buttonList.get(i).isButtonPressed()) {
         rightanswer = i;
+        buttonList.get(i).release();
       }
     }
   }
@@ -179,14 +183,17 @@ void buttonEffectsNoVariables() {
   if (screenChange == 7 || screenChange == 8 || screenChange == 9) {
     if  (buttonList.get(4).isButtonPressed()) {
       shownQuestion++;
+      buttonList.get(4).release();
     }
     if  (buttonList.get(5).isButtonPressed()&&shownQuestion>0) {
       shownQuestion--;
+      buttonList.get(5).release();
     }
   }
   if (screenChange == 1) {
     if (buttonList.get(5).isButtonPressed()) {
       database.Delete();
+      buttonList.get(5).release();
     }
   }
 }
@@ -211,9 +218,11 @@ void buttonEffectsGetData() {
     if (buttonList.get(4).isButtonPressed() && k > 1) {
       k--;
       println(buttonList.get(4));
+     buttonList.get(4).release();
     } else if (buttonList.get(5).isButtonPressed()) {
       k++;
       println(buttonList.get(5));
+      buttonList.get(5).release();
     }
   } else
     if (screenChange == 8) {
@@ -253,7 +262,7 @@ void buttonEffectsGetData() {
       }
 }
 
-void mousePressed() {
+void mouseClicked() {
   if (clickedDone == false) {
     for (int i = 0; i < buttonList.size(); i++) {
       buttonList.get(i).registerClick(mouseX, mouseY);
@@ -266,10 +275,6 @@ void mousePressed() {
 }
 
 void mouseReleased() {
-
-  for (int i = 0; i < buttonList.size(); i++) {
-    buttonList.get(i).release();
-  }
   clickedDone = false;
 }
 
