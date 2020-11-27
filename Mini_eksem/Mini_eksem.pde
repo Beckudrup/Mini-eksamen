@@ -126,6 +126,7 @@ void screenChanger() {
   if(changedScreen==false)
   buttonEffectsNoVariables();
   changedScreen=false;
+  imshitatcoding=false;
 }
 
 void buttonEffects(int nrknap, int onScreen, int toScreen) {
@@ -144,27 +145,27 @@ void buttonEffects(int nrknap, int onScreen, int toScreen) {
 
 void buttonEffectsNoVariables() {
   if (screenChange == 4) {
-    if (buttonList.get(6).isButtonPressed()) {
+    if (buttonList.get(6).isButtonPressed()&&imshitatcoding==false) {
       database.saveExerciseFractions(textFieldList.get(0).inPut, textFieldList.get(1).inPut, textFieldList.get(2).inPut, textFieldList.get(3).inPut, textFieldList.get(4).inPut);
-      buttonList.clear();
-      textFieldList.clear();
-      notdoneyet = true;
+
+      
       rightanswer = 0;
+       imshitatcoding=true;
       // k++;
     }
   }
   if (screenChange == 5) {
-    if (buttonList.get(6).isButtonPressed()) {
+    if (buttonList.get(6).isButtonPressed()&&imshitatcoding==false) {
       database.saveExerciseVectors(textFieldList.get(0).inPut, textFieldList.get(1).inPut, textFieldList.get(2).inPut, textFieldList.get(3).inPut, textFieldList.get(4).inPut);
-      buttonList.clear();
-      textFieldList.clear();
-      notdoneyet = true;
+     
+      
       rightanswer = 0;
+       imshitatcoding=true;
       // k++;
     }
   }
   if (screenChange == 6) {
-    if (buttonList.get(6).isButtonPressed()) {
+    if (buttonList.get(6).isButtonPressed()&&imshitatcoding==false) {
 
       database.saveExerciseTrigonometry(textFieldList.get(0).inPut, textFieldList.get(1).inPut, textFieldList.get(2).inPut, textFieldList.get(3).inPut, textFieldList.get(4).inPut);
       
@@ -177,7 +178,7 @@ void buttonEffectsNoVariables() {
 
   if (screenChange == 4 || screenChange == 5 || screenChange == 6 || screenChange == 7 || screenChange == 8 || screenChange == 9&&imshitatcoding==false) {
    for (int i = 0; i < 4; i++) {
-  println(buttonList.size());
+  //println(buttonList.size());
   if (buttonList.get(i).isButtonPressed()) {
   rightanswer = i;
    }
