@@ -31,12 +31,13 @@ void buttonAndTextFieldfixer() {
     database.showExerciseFractions(k = 1);
     database.showExerciseTrigonometry(k = 1);
     database.showExerciseVectors(k = 1);
-    buttonList.add(new Button(350, 200, 200, 50, "Teachers login"));
-    buttonList.add(new Button(50, 200, 200, 50, "Student login"));
+
+    buttonList.add(new Button(50, 200, 200, 50, "Teachers login"));
+    buttonList.add(new Button(350, 200, 200, 50, "Student login"));
     notdoneyet = false;
   }
-  if (screenChange == 1 && notdoneyet == true) {
-    buttonList.add(new Button(20, 20, 75, 50, "Back"));
+  if (screenChange == 1&&notdoneyet == true) {
+    buttonList.add(new Button(20, 20, 75, 50, "Home"));
     buttonList.add(new Button(400, 200, 125, 90, "List of \nstudents"));
     buttonList.add(new Button(10, 200, 125, 50, "Fractions"));
     buttonList.add(new Button(10, 400, 120, 50, "Vectors"));
@@ -45,35 +46,35 @@ void buttonAndTextFieldfixer() {
     notdoneyet = false;
   }
   if (screenChange == 2 && notdoneyet == true) {
-    buttonList.add(new Button(20, 530, 80, 50, "Back"));
+    buttonList.add(new Button(20, 530, 80, 50, "Home"));
     buttonList.add(new Button(10, 200, 125, 50, "Fractions"));
     buttonList.add(new Button(10, 400, 120, 50, "Vectors"));
     buttonList.add(new Button(10, 300, 200, 50, "Trigonemetry"));
     notdoneyet = false;
   }
   if (screenChange == 3 && notdoneyet == true) {
-    buttonList.add(new Button(20, 530, 80, 50, "Back"));
+    buttonList.add(new Button(20, 530, 80, 50, "Home"));
   }
 
   if ((screenChange == 4 || screenChange == 5 || screenChange == 6) && notdoneyet == true) {
     textFieldList.add(new TextField(200, 100, 200, 50));
     for (int i = 0; i < 4; i++) {
-      textFieldList.add(new TextField(50 + i * 150, 200, 80, 50));
-      buttonList.add(new Button(70 + i * 150, 270, 40, 50, ""));
+      textFieldList.add(new TextField(15 + i * 150, 200, 120, 50));
+      buttonList.add(new Button(55 + i * 150, 270, 40, 50, ""));
     }
-    buttonList.add(new Button(20, 530, 80, 50, "Back"));
+    buttonList.add(new Button(15, 530, 80, 50, "Back"));
     buttonList.add(new Button(500, 530, 80, 50, "Next"));
     buttonList.add(new Button(500, 100, 80, 50, "Save"));
-    buttonList.add(new Button(20, 20, 80, 50, "Home"));
+    buttonList.add(new Button(15, 20, 80, 50, "Home"));
     shownQuestion=0;
     notdoneyet = false;
   }
 
   if (screenChange == 7 && notdoneyet == true) {
-    buttonList.add(new Button(40, 270, 40, 50, ""));
-    buttonList.add(new Button(190, 270, 40, 50, ""));
-    buttonList.add(new Button(340, 270, 40, 50, ""));
-    buttonList.add(new Button(490, 270, 40, 50, ""));
+    buttonList.add(new Button(5, 270, 140, 50, ""));
+    buttonList.add(new Button(155, 270, 140, 50, ""));
+    buttonList.add(new Button(305, 270, 140, 50, ""));
+    buttonList.add(new Button(455, 270, 140, 50, ""));
     buttonList.add(new Button(20, 530, 80, 50, "Back"));
     buttonList.add(new Button(500, 530, 80, 50, "Next"));
     buttonList.add(new Button(20, 20, 80, 50, "Home"));
@@ -81,10 +82,10 @@ void buttonAndTextFieldfixer() {
     notdoneyet = false;
   }
   if (screenChange == 8 && notdoneyet == true) {
-    buttonList.add(new Button(40, 270, 40, 50, ""));
-    buttonList.add(new Button(190, 270, 40, 50, ""));
-    buttonList.add(new Button(340, 270, 40, 50, ""));
-    buttonList.add(new Button(490, 270, 40, 50, ""));
+    buttonList.add(new Button(5, 270, 140, 50, ""));
+    buttonList.add(new Button(155, 270, 140, 50, ""));
+    buttonList.add(new Button(305, 270, 140, 50, ""));
+    buttonList.add(new Button(455, 270, 140, 50, ""));
     buttonList.add(new Button(20, 530, 80, 50, "Back"));
     buttonList.add(new Button(500, 530, 80, 50, "Next"));
     buttonList.add(new Button(20, 20, 80, 50, "Home"));
@@ -92,10 +93,10 @@ void buttonAndTextFieldfixer() {
     notdoneyet = false;
   }
   if (screenChange == 9 && notdoneyet == true) {
-    buttonList.add(new Button(40, 270, 40, 50, ""));
-    buttonList.add(new Button(190, 270, 40, 50, ""));
-    buttonList.add(new Button(340, 270, 40, 50, ""));
-    buttonList.add(new Button(490, 270, 40, 50, ""));
+    buttonList.add(new Button(5, 270, 100, 50, ""));
+    buttonList.add(new Button(155, 270, 100, 50, ""));
+    buttonList.add(new Button(305, 270, 100, 50, ""));
+    buttonList.add(new Button(455, 270, 100, 50, ""));
     buttonList.add(new Button(20, 530, 80, 50, "Back"));
     buttonList.add(new Button(500, 530, 80, 50, "Next"));
     buttonList.add(new Button(20, 20, 80, 50, "Home"));
@@ -191,21 +192,20 @@ void buttonEffectsNoVariables() {
 void buttonEffectsGetData() {
   database.showExerciseFractions(k);
   if (screenChange == 7) {
-    int y = 140;
-    int x = 20;
+    int y = 290;
+        int x = 40;
     for (Exercise1 e1 : list1 ) {
       /*Methods e.q(the question), e.a1(first answer),
        e.a2(second answer), e.a3(third answer), e.a4(forth answer)*/
-      text(e1.q, x, y);
-      x += 100;
-      text(e1.a1, x, y);
-      x += 100;
-      text(e1.a2, x, y);
-      x += 100;
-      text(e1.a3, x, y);
-      x += 100;
-      text(e1.a4, x, y);
-      x += 100;
+      text(e1.q, width/2, 140);
+          text(e1.a1, x, y);
+          x += 150;
+          text(e1.a2, x, y);
+          x += 150;
+          text(e1.a3, x, y);
+          x += 150;
+          text(e1.a4, x, y);
+          x += 150;
     }
     if (buttonList.get(4).isButtonPressed()) {
       k++;
@@ -216,41 +216,38 @@ void buttonEffectsGetData() {
     }
   } else
     if (screenChange == 8) {
-      int y = 140;
-      int x = 20;
+      int y = 290;
+        int x = 40;
 
       for (Exercise2 e2 : list2 ) {
         /*Methods e.q(the question), e.a1(first answer),
          e.a2(second answer), e.a3(third answer), e.a4(forth answer)*/
-        text(e2.q, x, y);
-        x += 100;
-        text(e2.a1, x, y);
-        x += 100;
-        text(e2.a2, x, y);
-        x += 100;
-        text(e2.a3, x, y);
-        x += 100;
-        text(e2.a4, x, y);
-        x += 100;
+        text(e2.q, width/2, 140);
+          text(e2.a1, x, y);
+          x += 150;
+          text(e2.a2, x, y);
+          x += 150;
+          text(e2.a3, x, y);
+          x += 150;
+          text(e2.a4, x, y);
+          x += 150;
       }
     } else
       if (screenChange == 9) {
-        int y = 140;
-        int x = 20;
-
+        int y = 290;
+        int x = 40;
         for (Exercise3 e3 : list3 ) {
           /*Methods e.q(the question), e.a1(first answer),
            e.a2(second answer), e.a3(third answer), e.a4(forth answer)*/
-          text(e3.q, x, y);
-          x += 100;
+          text(e3.q, width/2, 140);
           text(e3.a1, x, y);
-          x += 100;
+          x += 150;
           text(e3.a2, x, y);
-          x += 100;
+          x += 150;
           text(e3.a3, x, y);
-          x += 100;
+          x += 150;
           text(e3.a4, x, y);
-          x += 100;
+          x += 150;
         }
       }
 }
@@ -262,6 +259,7 @@ void mousePressed() {
   }
   for (int i = 0; i < textFieldList.size(); i++) {
     textFieldList.get(i).registerClick(mouseX, mouseY);
+   
   }
 }
 

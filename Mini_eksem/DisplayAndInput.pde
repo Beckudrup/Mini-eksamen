@@ -2,10 +2,12 @@ class DisplayAndInput {
   int rightAnswer;
   int screenChange;
   ArrayList<Button> buttList;
+  ArrayList<TextField>  TFList;
   DisplayAndInput() {
   }
   void display(ArrayList<Button> buttonList, int screenChange, ArrayList<TextField> TFList, int r) {
     this.buttList = buttonList;
+    this.TFList=TFList;
     this.screenChange = screenChange;
     this.rightAnswer = r;
     background(3, 140, 213);
@@ -63,8 +65,8 @@ class DisplayAndInput {
     if (screenChange == 4) {
       fill(0, 0, 0);
       textSize(40);
-      text("Fraction", width/2, 50);
       textAlign(CENTER);
+      text("Fraction", width/2, 50);
      buttList.get(rightAnswer).valgt();
     }
   }
@@ -72,8 +74,8 @@ class DisplayAndInput {
     if (screenChange == 5) {
       fill(0, 0, 0);
       textSize(40);
-      text("Vectors", width/2, 50);
       textAlign(CENTER);
+      text("Vectors", width/2, 50);
       buttList.get(rightAnswer).valgt();
     }
   }
@@ -81,8 +83,9 @@ class DisplayAndInput {
     if (screenChange == 6) {
       fill(0, 0, 0);
       textSize(40);
-      text("Trigonometry", width/2, 50);
       textAlign(CENTER);
+      text("Trigonometry", width/2, 50);
+      
       buttList.get(rightAnswer).valgt();
     }
   }
@@ -90,8 +93,8 @@ class DisplayAndInput {
     if (screenChange == 7) {
       fill(0, 0, 0);
       textSize(40);
-      text("Fraction", width/2, 50);
       textAlign(CENTER);
+      text("Fraction", width/2, 50);
       buttList.get(rightAnswer).valgt();
     }
   }
@@ -99,8 +102,9 @@ class DisplayAndInput {
     if (screenChange == 8) {
       fill(0, 0, 0);
       textSize(40);
-      text("Vectors", width/2, 50);
       textAlign(CENTER);
+      text("Vectors", width/2, 50);
+      
      buttList.get(rightAnswer).valgt();
     }
   }
@@ -108,9 +112,11 @@ class DisplayAndInput {
     if (screenChange == 9) {
       fill(0, 0, 0);
       textSize(40);
-      text("Trigonometry", width/2, 50);
       textAlign(CENTER);
+      text("Trigonometry", width/2, 50);
      buttList.get(rightAnswer).valgt();
+     
+     
     }
   }
   
