@@ -1,5 +1,7 @@
 ArrayList<Button> buttonList = new ArrayList();
-ArrayList<Exercise> list = new ArrayList<Exercise>();
+ArrayList<Exercise1> list1 = new ArrayList<Exercise1>();
+ArrayList<Exercise2> list2 = new ArrayList<Exercise2>();
+ArrayList<Exercise3> list3 = new ArrayList<Exercise3>();
 DisplayAndInput displayAndInput = new DisplayAndInput();
 Database database = new Database(this);
 int screenChange = 0;
@@ -11,7 +13,6 @@ boolean changedScreen;
 
 void setup() {
   size(600, 600);
-  
 }
 
 void draw() {
@@ -26,6 +27,9 @@ void buttonAndTextFieldfixer() {
   if (screenChange == 0 && notdoneyet == true) {
     database.setups();
     database.showExerciseFractions();
+    database.showExerciseTrigonometry();
+    database.showExerciseVectors();
+
     buttonList.add(new Button(350, 200, 200, 50, "Teachers login"));
     buttonList.add(new Button(50, 200, 200, 50, "Student login"));
     notdoneyet = false;
@@ -117,7 +121,7 @@ void buttonEffects(int nrknap, int onScreen, int toScreen) {
 
   if (screenChange == onScreen&&changedScreen == false) {
     if (buttonList.get(nrknap).isButtonPressed()) {
-      println("bruh");
+      //println("bruh");
       screenChange = toScreen;
       buttonList.clear();
       textFieldList.clear();
@@ -160,12 +164,12 @@ void buttonEffectsNoVariables() {
   }
 
   if (screenChange == 4 || screenChange == 5 || screenChange == 6 || screenChange == 7 || screenChange == 8 || screenChange == 9) {
-   for (int i = 0; i < 4; i++) {
-   if (buttonList.get(i).isButtonPressed()) {
-   rightanswer = i;
-   }
-   }
-   }
+    for (int i = 0; i < 4; i++) {
+      if (buttonList.get(i).isButtonPressed()) {
+        rightanswer = i;
+      }
+    }
+  }
 
   if (screenChange == 7|| screenChange == 8 || screenChange == 9) {
     if  (buttonList.get(4).isButtonPressed()) {
@@ -187,18 +191,18 @@ void buttonEffectsGetData() {
     int x = 20;
 
     //println(list.size());
-    for (Exercise e : list ) {
+    for (Exercise1 e1 : list1 ) {
       /*Methods e.q(the question), e.a1(first answer),
        e.a2(second answer), e.a3(third answer), e.a4(forth answer)*/
-      text(e.q, x, y);
+      text(e1.q, x, y);
       x += 100;
-      text(e.a1, x, y);
+      text(e1.a1, x, y);
       x += 100;
-      text(e.a2, x, y);
+      text(e1.a2, x, y);
       x += 100;
-      text(e.a3, x, y);
+      text(e1.a3, x, y);
       x += 100;
-      text(e.a4, x, y);
+      text(e1.a4, x, y);
       x += 100;
     }
   } else
@@ -206,19 +210,19 @@ void buttonEffectsGetData() {
       int y = 140;
       int x = 20;
 
-      //println(list.size());
-      for (Exercise e : list ) {
+      println(list2.size());
+      for (Exercise2 e2 : list2 ) {
         /*Methods e.q(the question), e.a1(first answer),
          e.a2(second answer), e.a3(third answer), e.a4(forth answer)*/
-        text(e.q, x, y);
+        text(e2.q, x, y);
         x += 100;
-        text(e.a1, x, y);
+        text(e2.a1, x, y);
         x += 100;
-        text(e.a2, x, y);
+        text(e2.a2, x, y);
         x += 100;
-        text(e.a3, x, y);
+        text(e2.a3, x, y);
         x += 100;
-        text(e.a4, x, y);
+        text(e2.a4, x, y);
         x += 100;
       }
     } else
@@ -226,19 +230,19 @@ void buttonEffectsGetData() {
         int y = 140;
         int x = 20;
 
-        //println(list.size());
-        for (Exercise e : list ) {
+        println(list3.size());
+        for (Exercise3 e3 : list3 ) {
           /*Methods e.q(the question), e.a1(first answer),
            e.a2(second answer), e.a3(third answer), e.a4(forth answer)*/
-          text(e.q, x, y);
+          text(e3.q, x, y);
           x += 100;
-          text(e.a1, x, y);
+          text(e3.a1, x, y);
           x += 100;
-          text(e.a2, x, y);
+          text(e3.a2, x, y);
           x += 100;
-          text(e.a3, x, y);
+          text(e3.a3, x, y);
           x += 100;
-          text(e.a4, x, y);
+          text(e3.a4, x, y);
           x += 100;
         }
       }

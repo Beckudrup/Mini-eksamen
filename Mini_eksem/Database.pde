@@ -36,46 +36,46 @@ class Database {
   void showExerciseFractions() {
     db.query("SELECT  * FROM Exercises1");
     int lastQuestionID = 1;
-    Exercise exercise = new Exercise();
-    db.query("SELECT  * FROM Exercises1 where questionID = "+ 2);
-    exercise.id = db.getInt("questionId");
-    exercise.q = db.getString("question");
-    exercise.a1 = db.getString("answer1");
-    exercise.a2 = db.getString("answer2");
-    exercise.a3 = db.getString("answer3");
-    exercise.a4 = db.getString("answer4");
+    Exercise1 exercise1 = new Exercise1();
+    db.query("SELECT  * FROM Exercises1 where questionID = "+ 1);
+    exercise1.id = db.getInt("questionId");
+    exercise1.q = db.getString("question");
+    exercise1.a1 = db.getString("answer1");
+    exercise1.a2 = db.getString("answer2");
+    exercise1.a3 = db.getString("answer3");
+    exercise1.a4 = db.getString("answer4");
     lastQuestionID++;
-    list.add(exercise);
+    list1.add(exercise1);
   }
 
   void showExerciseTrigonometry() {
     db.query("SELECT  * FROM Exercises2");
     int lastQuestionID = 1;
-    Exercise exercise = new Exercise();
+    Exercise2 exercise2 = new Exercise2();
     db.query("SELECT  * FROM Exercises2 where questionID = "+ 1);
-    exercise.id = db.getInt("questionId");
-    exercise.q = db.getString("question");
-    exercise.a1 = db.getString("answer1");
-    exercise.a2 = db.getString("answer2");
-    exercise.a3 = db.getString("answer3");
-    exercise.a4 = db.getString("answer4");
+    exercise2.id = db.getInt("questionId");
+    exercise2.q = db.getString("question");
+    exercise2.a1 = db.getString("answer1");
+    exercise2.a2 = db.getString("answer2");
+    exercise2.a3 = db.getString("answer3");
+    exercise2.a4 = db.getString("answer4");
     lastQuestionID++;
-    list.add(exercise);
+    list2.add(exercise2);
   }
 
   void showExerciseVectors() {
     db.query("SELECT  * FROM Exercises3");
     int lastQuestionID = 1;
-    Exercise exercise = new Exercise();
-    db.query("SELECT  * FROM Exercises3 where questionID = "+ 2);
-    exercise.id = db.getInt("questionId");
-    exercise.q = db.getString("question");
-    exercise.a1 = db.getString("answer1");
-    exercise.a2 = db.getString("answer2");
-    exercise.a3 = db.getString("answer3");
-    exercise.a4 = db.getString("answer4");
+    Exercise3 exercise3 = new Exercise3();
+    db.query("SELECT  * FROM Exercises3 where questionID = "+ 1);
+    exercise3.id = db.getInt("questionId");
+    exercise3.q = db.getString("question");
+    exercise3.a1 = db.getString("answer1");
+    exercise3.a2 = db.getString("answer2");
+    exercise3.a3 = db.getString("answer3");
+    exercise3.a4 = db.getString("answer4");
     lastQuestionID++;
-    list.add(exercise);
+    list3.add(exercise3);
   }
 
   void Delete() {
