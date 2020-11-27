@@ -86,20 +86,20 @@ class DisplayAndInput {
       buttList.get(rightAnswer).valgt();
     }
   }
-  void studentVectors() {
+  void studentFractions() {
     if (screenChange == 7) {
       fill(0, 0, 0);
       textSize(40);
-      text("Vectors", width/2, 50);
+      text("Fraction", width/2, 50);
       textAlign(CENTER);
       buttList.get(rightAnswer).valgt();
     }
   }
-  void studentFractions() {
+    void studentVectors() {
     if (screenChange == 8) {
       fill(0, 0, 0);
       textSize(40);
-      text("Fraction", width/2, 50);
+      text("Vectors", width/2, 50);
       textAlign(CENTER);
       buttList.get(rightAnswer).valgt();
     }
