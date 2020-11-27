@@ -25,7 +25,7 @@ void draw() {
 void buttonAndTextFieldfixer() {
   if (screenChange == 0 && notdoneyet == true) {
     database.setups();
-    database.showExercise();
+    database.showExerciseFractions();
     buttonList.add(new Button(350, 200, 200, 50, "Teachers login"));
     buttonList.add(new Button(50, 200, 200, 50, "Student login"));
     notdoneyet = false;
@@ -128,9 +128,29 @@ void buttonEffects(int nrknap, int onScreen, int toScreen) {
 }
 
 void buttonEffectsNoVariables() {
-  if (screenChange == 4 || screenChange == 5 || screenChange == 6) {
+  if (screenChange == 4) {
     if (buttonList.get(6).isButtonPressed()) {
-      database.saveExercise(textFieldList.get(0).inPut, textFieldList.get(1).inPut, textFieldList.get(2).inPut, textFieldList.get(3).inPut, textFieldList.get(4).inPut);
+      database.saveExerciseFractions(textFieldList.get(0).inPut, textFieldList.get(1).inPut, textFieldList.get(2).inPut, textFieldList.get(3).inPut, textFieldList.get(4).inPut);
+      buttonList.clear();
+      textFieldList.clear();
+      notdoneyet = true;
+      rightanswer = 0;
+      // k++;
+    }
+  }
+  if (screenChange == 5) {
+    if (buttonList.get(6).isButtonPressed()) {
+      database.saveExerciseVectors(textFieldList.get(0).inPut, textFieldList.get(1).inPut, textFieldList.get(2).inPut, textFieldList.get(3).inPut, textFieldList.get(4).inPut);
+      buttonList.clear();
+      textFieldList.clear();
+      notdoneyet = true;
+      rightanswer = 0;
+      // k++;
+    }
+  }
+  if (screenChange == 6) {
+    if (buttonList.get(6).isButtonPressed()) {
+      database.saveExerciseTrigonometry(textFieldList.get(0).inPut, textFieldList.get(1).inPut, textFieldList.get(2).inPut, textFieldList.get(3).inPut, textFieldList.get(4).inPut);
       buttonList.clear();
       textFieldList.clear();
       notdoneyet = true;
@@ -147,8 +167,7 @@ void buttonEffectsNoVariables() {
    }
    }
 
- 
-  if (screenChange==7||screenChange==8||screenChange==9) {
+  if (screenChange == 7|| screenChange == 8 || screenChange == 9) {
     if  (buttonList.get(4).isButtonPressed()) {
     }
     if  (buttonList.get(5).isButtonPressed()) {
@@ -181,15 +200,48 @@ void buttonEffectsGetData() {
       x += 100;
       text(e.a4, x, y);
       x += 100;
-      println();
-      println("Exercise:" +" " + e.q);
-      println("Answer 1:" +" " + e.a1);
-      println("Answer 2:" +" " + e.a2);
-      println("Answer 3:" +" " + e.a3);
-      println("Answer 4:" +" " + e.a4);
-      
     }
-  }
+  } else
+    if (screenChange == 8 && i == 1) {
+      int y = 140;
+      int x = 20;
+
+      //println(list.size());
+      for (Exercise e : list ) {
+        /*Methods e.q(the question), e.a1(first answer),
+         e.a2(second answer), e.a3(third answer), e.a4(forth answer)*/
+        text(e.q, x, y);
+        x += 100;
+        text(e.a1, x, y);
+        x += 100;
+        text(e.a2, x, y);
+        x += 100;
+        text(e.a3, x, y);
+        x += 100;
+        text(e.a4, x, y);
+        x += 100;
+      }
+    } else
+      if (screenChange == 9 && i == 1) {
+        int y = 140;
+        int x = 20;
+
+        //println(list.size());
+        for (Exercise e : list ) {
+          /*Methods e.q(the question), e.a1(first answer),
+           e.a2(second answer), e.a3(third answer), e.a4(forth answer)*/
+          text(e.q, x, y);
+          x += 100;
+          text(e.a1, x, y);
+          x += 100;
+          text(e.a2, x, y);
+          x += 100;
+          text(e.a3, x, y);
+          x += 100;
+          text(e.a4, x, y);
+          x += 100;
+        }
+      }
 }
 
 void mouseClicked() {
