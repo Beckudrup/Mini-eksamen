@@ -194,10 +194,12 @@ void buttonEffectsGetData() {
     }
     if (buttonList.get(4).isButtonPressed() && k > 1) {
       k--;
+      list1.clear();
       buttonList.get(4).release();
       //Skulle helst stoppe k i at stige når den bliver større end maximum questionID
     } else if (buttonList.get(5).isButtonPressed()) {
       k++;
+      list1.clear();
       buttonList.get(5).release();
     }
   } 
@@ -220,12 +222,12 @@ void buttonEffectsGetData() {
     }
     if (buttonList.get(4).isButtonPressed() && k > 1) {
       k--;
-      println(buttonList.get(4));
+      list2.clear();
       buttonList.get(4).release();
       //Skulle helst stoppe k i at stige når den bliver større end maximum questionID
     } else if (buttonList.get(5).isButtonPressed()) {
       k++;
-      println(buttonList.get(5));
+      list2.clear();
       buttonList.get(5).release();
     }
   } 
@@ -248,12 +250,12 @@ void buttonEffectsGetData() {
     }
     if (buttonList.get(4).isButtonPressed() && k > 1) {
       k--;
-      println(buttonList.get(4));
+      list3.clear();
       buttonList.get(4).release();
       //Skulle helst stoppe k i at stige når den bliver større end maximum questionID
     } else if (buttonList.get(5).isButtonPressed()) {
       k++;
-      println(buttonList.get(5));
+      list3.clear();
       buttonList.get(5).release();
     }
   }
