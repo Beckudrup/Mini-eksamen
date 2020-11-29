@@ -2,6 +2,7 @@ ArrayList<Button> buttonList = new ArrayList();
 ArrayList<Exercise1> list1 = new ArrayList<Exercise1>();
 ArrayList<Exercise2> list2 = new ArrayList<Exercise2>();
 ArrayList<Exercise3> list3 = new ArrayList<Exercise3>();
+ArrayList<AClass> acList = new ArrayList<AClass>();
 DisplayAndInput displayAndInput = new DisplayAndInput();
 Database database = new Database(this);
 int screenChange = 0;
@@ -176,94 +177,99 @@ void buttonEffectsNoVariables() {
 void buttonEffectsGetData() {
   if (screenChange == 7 ) {
     database.showExerciseFractions(k);
-    if (list1.size() != 0) {
-      int y = 290;
-      int x = 40;
-      for (Exercise1 e1 : list1 ) {
-        /*Methods e1.q(the question), e1.a1(first answer),
-         e1.a2(second answer), e1.a3(third answer), e1.a4(forth answer)*/
-        text(e1.q, width/2, 140);
-        text(e1.a1, x, y);
-        x += 150;
-        text(e1.a2, x, y);
-        x += 150;
-        text(e1.a3, x, y);
-        x += 150;
-        text(e1.a4, x, y);
-        x += 150;
-      }
-      if (buttonList.get(4).isButtonPressed() && k > 1) {
-        k--;
-        println(buttonList.get(4));
-        buttonList.get(4).release();
-        //Skulle helst stoppe k i at stige når den bliver større end maximum questionID
-      } else if (buttonList.get(5).isButtonPressed()) {
-        k++;
-        println(buttonList.get(5));
-        buttonList.get(5).release();
-      }
+    int y = 290;
+    int x = 40;
+    for (Exercise1 e1 : list1 ) {
+      /*Methods e1.q(the question), e1.a1(first answer),
+       e1.a2(second answer), e1.a3(third answer), e1.a4(forth answer)*/
+      text(e1.q, width/2, 140);
+      text(e1.a1, x, y);
+      x += 150;
+      text(e1.a2, x, y);
+      x += 150;
+      text(e1.a3, x, y);
+      x += 150;
+      text(e1.a4, x, y);
+      x += 150;
+    }
+    if (buttonList.get(4).isButtonPressed() && k > 1) {
+      k--;
+      println(buttonList.get(4));
+      buttonList.get(4).release();
+      //Skulle helst stoppe k i at stige når den bliver større end maximum questionID
+    } else if (buttonList.get(5).isButtonPressed()) {
+      k++;
+      println(buttonList.get(5));
+      buttonList.get(5).release();
     }
   } 
-    if (screenChange == 8) {
-      database.showExerciseTrigonometry(k);
-      if (list2.size() != 0) {
-        int y = 290;
-        int x = 40;
-        for (Exercise2 e2 : list2 ) {
-          /*Methods e2.q(the question), e2.a1(first answer),
-           e2.a2(second answer), e2.a3(third answer), e2.a4(forth answer)*/
-          text(e2.q, width/2, 140);
-          text(e2.a1, x, y);
-          x += 150;
-          text(e2.a2, x, y);
-          x += 150;
-          text(e2.a3, x, y);
-          x += 150;
-          text(e2.a4, x, y);
-          x += 150;
-        }
-        if (buttonList.get(4).isButtonPressed() && k > 1) {
-          k--;
-          println(buttonList.get(4));
-          buttonList.get(4).release();
-          //Skulle helst stoppe k i at stige når den bliver større end maximum questionID
-        } else if (buttonList.get(5).isButtonPressed()) {
-          k++;
-          println(buttonList.get(5));
-          buttonList.get(5).release();
-        }
-      }
-    } 
-      if (screenChange == 9) {
-        database.showExerciseVectors(k);
-        if (list3.size() != 0) {
-          int y = 290;
-          int x = 40;
-          for (Exercise3 e3 : list3 ) {
-            /*Methods e3.q(the question), e3.a1(first answer),
-             e3.a2(second answer), e3.a3(third answer), e3.a4(forth answer)*/
-            text(e3.q, width/2, 140);
-            text(e3.a1, x, y);
-            x += 150;
-            text(e3.a2, x, y);
-            x += 150;
-            text(e3.a3, x, y);
-            x += 150;
-            text(e3.a4, x, y);
-            x += 150;
-          }
-          if (buttonList.get(4).isButtonPressed() && k > 1) {
-            k--;
-            println(buttonList.get(4));
-            buttonList.get(4).release();
-            //Skulle helst stoppe k i at stige når den bliver større end maximum questionID
-          } else if (buttonList.get(5).isButtonPressed()) {
-            k++;
-            println(buttonList.get(5));
-            buttonList.get(5).release();
-          }
-        }
-      }
+  if (screenChange == 8) {
+    database.showExerciseTrigonometry(k);
+    int y = 290;
+    int x = 40;
+    for (Exercise2 e2 : list2 ) {
+      /*Methods e2.q(the question), e2.a1(first answer),
+       e2.a2(second answer), e2.a3(third answer), e2.a4(forth answer)*/
+      text(e2.q, width/2, 140);
+      text(e2.a1, x, y);
+      x += 150;
+      text(e2.a2, x, y);
+      x += 150;
+      text(e2.a3, x, y);
+      x += 150;
+      text(e2.a4, x, y);
+      x += 150;
+    }
+    if (buttonList.get(4).isButtonPressed() && k > 1) {
+      k--;
+      println(buttonList.get(4));
+      buttonList.get(4).release();
+      //Skulle helst stoppe k i at stige når den bliver større end maximum questionID
+    } else if (buttonList.get(5).isButtonPressed()) {
+      k++;
+      println(buttonList.get(5));
+      buttonList.get(5).release();
+    }
+  } 
+  if (screenChange == 9) {
+    database.showExerciseVectors(k);
+    int y = 290;
+    int x = 40;
+    for (Exercise3 e3 : list3 ) {
+      /*Methods e3.q(the question), e3.a1(first answer),
+       e3.a2(second answer), e3.a3(third answer), e3.a4(forth answer)*/
+      text(e3.q, width/2, 140);
+      text(e3.a1, x, y);
+      x += 150;
+      text(e3.a2, x, y);
+      x += 150;
+      text(e3.a3, x, y);
+      x += 150;
+      text(e3.a4, x, y);
+      x += 150;
+    }
+    if (buttonList.get(4).isButtonPressed() && k > 1) {
+      k--;
+      println(buttonList.get(4));
+      buttonList.get(4).release();
+      //Skulle helst stoppe k i at stige når den bliver større end maximum questionID
+    } else if (buttonList.get(5).isButtonPressed()) {
+      k++;
+      println(buttonList.get(5));
+      buttonList.get(5).release();
+    }
+  }
+  if (screenChange == 3) {
+    database.ShowStudentList();
+    int y = 50;
+    int x = 200;
+    for (AClass ac : acList ) {
+      text(ac.fname, x, y);
+      text(ac.lname, x + 230, y);
+      text(ac.c, x + 350, y);
+      y += 30;
+    }
+  }
 }
 
 void mouseClicked() {

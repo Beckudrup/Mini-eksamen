@@ -24,3 +24,10 @@ class Exercise3 {
   String a3;
   String a4;
 }
+
+class AClass {
+  int id;
+  String fname;
+  String lname;
+  String c;
+}
