@@ -1,7 +1,6 @@
 class Button {
 
   boolean Tryk;
-
   float xPos, yPos;
   float w, h;
   String text;
