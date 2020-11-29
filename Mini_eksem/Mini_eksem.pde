@@ -11,7 +11,7 @@ ArrayList<TextField> textFieldList = new ArrayList();
 int k;
 int rightanswer;
 boolean changedScreen;
-int shownQuestion;
+
 
 void setup() {
   size(600, 600);
