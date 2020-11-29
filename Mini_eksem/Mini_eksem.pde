@@ -194,12 +194,10 @@ void buttonEffectsGetData() {
     }
     if (buttonList.get(4).isButtonPressed() && k > 1) {
       k--;
-      println(buttonList.get(4));
       buttonList.get(4).release();
       //Skulle helst stoppe k i at stige når den bliver større end maximum questionID
     } else if (buttonList.get(5).isButtonPressed()) {
       k++;
-      println(buttonList.get(5));
       buttonList.get(5).release();
     }
   } 
